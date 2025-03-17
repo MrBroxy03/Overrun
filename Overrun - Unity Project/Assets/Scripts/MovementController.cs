@@ -30,5 +30,9 @@ public class MovementController : MonoBehaviour
         {
             transform.position += transform.right * movementSpeed * Time.deltaTime;
         }
+        if (Input.GetKey(KeyCode.Space))
+        {
+            transform.position += transform.up * 10 * Time.deltaTime;
+        }
     }
 }
