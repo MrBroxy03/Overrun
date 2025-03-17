@@ -5,10 +5,15 @@ using UnityEngine;
 public class MovementController : MonoBehaviour
 {
     public float movementSpeed = 2.0f;
+    public float jumpForce = 3f;
+    private bool IsOnGround = true;
+
+    public Rigidbody rigidB;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        rigidB = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -30,9 +35,19 @@ public class MovementController : MonoBehaviour
         {
             transform.position += transform.right * movementSpeed * Time.deltaTime;
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && IsOnGround)
         {
-            transform.position += transform.up * 10 * Time.deltaTime;
+            IsOnGround = false;
+            rigidB.AddForce(transform.up*jumpForce, ForceMode.Impulse);
         }
+        rigidB.AddForce(-transform.up * 6.5f, ForceMode.Force);
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+       // if (collision.gameObject.tag == "Ground")
+       // {
+            IsOnGround = true;
+      //  }
     }
 }
