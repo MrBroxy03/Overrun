@@ -5,11 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
+  - Hand
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Hand
   - Water
   - UI
   - 

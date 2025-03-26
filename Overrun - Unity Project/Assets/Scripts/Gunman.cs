@@ -13,13 +13,13 @@ public class Gunman : MonoBehaviour
     void Update()
     {
         
-        if (Physics.Raycast(player.transform.position, -transform.TransformDirection (Vector3.forward), out RaycastHit hitinfo, rayDistance) && shootCooldown == 0f)
+        if (Physics.Raycast(player.transform.position, -this.transform.TransformDirection (Vector3.forward), out RaycastHit hitinfo, rayDistance) && shootCooldown == 0f)
         {
             ShootBullet();
             shootCooldown = 0.5f;
-            //Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.forward) * hitinfo.distance, Color.red);
+            Debug.DrawRay(this.transform.position, this.transform.TransformDirection (Vector3.forward) * hitinfo.distance, Color.red);
         } else {
-            //Debug.DrawRay (transform.position, transform.TransformDirection (Vector3.forward) * rayDistance, Color.blue);
+            Debug.DrawRay(this.transform.position, this.transform.TransformDirection (Vector3.forward) * rayDistance, Color.blue);
         }
 
         if (shootCooldown > 0)
