@@ -69,14 +69,13 @@ public class MovementController : MonoBehaviour
             moveFoward = 0;
             moveSideways = 0;
 
-            Debug.Log(rigidB.velocity);
+            //Debug.Log(rigidB.velocity);
 
             isOnGround = CheckGround();
 
         if (isOnGround)
         {
             ledgeGrabbed = false;
-            Debug.Log("OnGround");
             jumping = false;
         }
         if (Input.GetKey(KeyCode.W))
@@ -125,9 +124,10 @@ public class MovementController : MonoBehaviour
             sliding = true;
             
         }
-        else
+        else if(sliding)
         {
-            Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out RaycastHit upCheck, 1f);
+            Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.up), out RaycastHit upCheck, 1.5f);
+            Debug.Log(upCheck.collider);
             if (upCheck.collider == null)
             {
                 sliding = false;
