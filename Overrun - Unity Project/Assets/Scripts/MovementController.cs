@@ -8,13 +8,14 @@ public class MovementController : MonoBehaviour
     public float movementSpeed = 500.0f;
     public float jumpForce = 3f;
 
-    private float ledgeGrabCD = 0f;
+    private float jumpCD = 0f;
 
     private bool isOnGround = true;
     private bool jumping = false;
+    public bool sliding = false;
 
     private Rigidbody rigidB;
-    private BoxCollider groundCollider;
+    private CapsuleCollider charCollider;
     private bool space;
     private bool ledgeGrabbed;
 
@@ -25,47 +26,42 @@ public class MovementController : MonoBehaviour
     void Start()
     {
         rigidB = GetComponent<Rigidbody>();
-        groundCollider = this.transform.GetComponent<BoxCollider>();
+        charCollider = this.transform.GetComponent<CapsuleCollider>();
     }
-    private void LedgeGrab()
+    private IEnumerator LedgeGrab()
     {
         Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out RaycastHit bodyCheck, 1f);
         Physics.Raycast(this.transform.position + new Vector3(0, 1, 0), this.transform.TransformDirection(Vector3.forward), out RaycastHit headCheck, 1f);
-       if (bodyCheck.collider != null && headCheck.collider == null && ledgeGrabCD == 0){
+       if (bodyCheck.collider != null && headCheck.collider == null){
             Debug.Log("Ledge Grabed");
+            rigidB.velocity = Vector3.zero;
             ledgeGrabbed = true;
-            rigidB.AddForce(transform.up * (1f), ForceMode.Impulse);
-            rigidB.AddForce(transform.forward * (1f), ForceMode.Impulse);
-            ledgeGrabCD = 1f;
+            rigidB.AddForce(transform.up * (12f), ForceMode.Impulse);
+            yield return new WaitForSeconds(0.1f);
+            rigidB.AddForce(transform.forward * (25), ForceMode.Impulse);
+            ledgeGrabbed = false;
         }
         Debug.DrawRay(this.transform.position, this.transform.TransformDirection(Vector3.forward) * 1f, Color.blue);
         Debug.DrawRay(this.transform.position + new Vector3(0,1,0), this.transform.TransformDirection(Vector3.forward)*1f,Color.red);
+        
     }
     // Update is called once per frame
     private bool CheckGround()
     {
         Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1f, Color.red);
         Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1f, Color.red);
-       Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1.2f);
-        Debug.Log(bodyCheck2);
+        Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1.2f);
         return Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck25, 1.2f); ;
     }
 
     void Jump()
     {
-        if (!ledgeGrabbed && CheckGround())
+        if (!ledgeGrabbed && CheckGround() && jumpCD == 0)
         {
             jumping = true;
             Debug.Log("Jumping");
             rigidB.AddForce(transform.up * jumpForce, ForceMode.Impulse);
-        }
-        else if(ledgeGrabbed && ledgeGrabCD == 0)
-        {
-            Debug.Log("LedgeGrabbed");
-            jumping = false;
-            ledgeGrabbed = false;
-            ledgeGrabCD = 1f;
-            rigidB.AddForce(transform.up * jumpForce/10, ForceMode.Impulse);
+            jumpCD = 0.2f;
         }
     }
         void Update()
@@ -73,72 +69,94 @@ public class MovementController : MonoBehaviour
             moveFoward = 0;
             moveSideways = 0;
 
-            Debug.Log(ledgeGrabbed);
-            //Debug.Log(rigidB.velocity);
-            if (!ledgeGrabbed)
-            {
-                isOnGround = CheckGround();
+            Debug.Log(rigidB.velocity);
 
-                if (isOnGround)
-                {
-                    ledgeGrabbed = false;
-                    Debug.Log("OnGround");
-                    jumping = false;
-                }
-            if (Input.GetKey(KeyCode.W))
-                {
-                    Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out RaycastHit fowardCheck, 0.75f);
-                    if (fowardCheck.collider == null)
-                    {
-                        moveFoward = movementSpeed;
-                    }
-                }
-                if (Input.GetKey(KeyCode.A))
-                {
-                    moveSideways = -movementSpeed;
-                }
-                if (Input.GetKey(KeyCode.S))
-                {
-                    moveFoward = -movementSpeed;
-                }
-                if (Input.GetKey(KeyCode.D))
-                {
-                    moveSideways = movementSpeed;
-                }
+            isOnGround = CheckGround();
+
+        if (isOnGround)
+        {
+            ledgeGrabbed = false;
+            Debug.Log("OnGround");
+            jumping = false;
+        }
+        if (Input.GetKey(KeyCode.W))
+        {
+            Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out RaycastHit fowardCheck, 0.75f);
+            if (fowardCheck.collider == null)
+            {
+                moveFoward = movementSpeed;
             }
+        }
+
+        if (Input.GetKey(KeyCode.S))
+        {
+            moveFoward = -movementSpeed;
+        }
+
+        if (!sliding)
+        {
+            if (Input.GetKey(KeyCode.A))
+            {
+                moveSideways = -movementSpeed;
+            }
+
+            if (Input.GetKey(KeyCode.D))
+            {
+                moveSideways = movementSpeed;
+            }
+        }            
 
         if (Input.GetKey(KeyCode.Space))
         {
-            if (!isOnGround)
+            if (!isOnGround && !ledgeGrabbed)
             {
+                IEnumerator coroutine = LedgeGrab();
+                StartCoroutine(coroutine);
                 LedgeGrab();
             }
             else
             {
+
                 Jump();
             }
         }
+        if (Input.GetKey(KeyCode.C))
+        {
+            sliding = true;
+            
+        }
+        else
+        {
+            Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out RaycastHit upCheck, 1f);
+            if (upCheck.collider == null)
+            {
+                sliding = false;
+                this.transform.localScale = Vector3.one;
+            } 
+        }
+
+            if (sliding) {
+                moveFoward = movementSpeed * 0.75f;
+                this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+            }
 
             if (!ledgeGrabbed)
             {
                 rigidB.AddForce((-transform.up * 6.5f), ForceMode.Force);
                 rigidB.velocity = (this.transform.forward * moveFoward) + (this.transform.right * moveSideways) + (this.transform.up * rigidB.velocity.y);
             }
-            else
-            {
-                rigidB.velocity = Vector3.zero;
-            }
            
             Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1f, Color.blue);
-            if (ledgeGrabCD > 0)
+
+            if (jumpCD > 0)
             {
-                ledgeGrabCD -= Time.deltaTime;
+                jumpCD -= Time.deltaTime;
             }
             else
             {
-                ledgeGrabCD = 0;
+             jumpCD = 0;
             }
-        }
+    }
 
         
 }
