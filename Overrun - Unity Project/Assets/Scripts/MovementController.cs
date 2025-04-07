@@ -64,14 +64,15 @@ public class MovementController : MonoBehaviour
             jumpCD = 0.2f;
         }
     }
-        void Update()
-        {
-            moveFoward = 0;
-            moveSideways = 0;
 
-            //Debug.Log(rigidB.velocity);
+    void Update()
+    {
+        moveFoward = 0;
+        moveSideways = 0;
 
-            isOnGround = CheckGround();
+        //Debug.Log(rigidB.velocity);
+
+        isOnGround = CheckGround();
 
         if (isOnGround)
         {
@@ -119,10 +120,11 @@ public class MovementController : MonoBehaviour
                 Jump();
             }
         }
-        if (Input.GetKey(KeyCode.C))
+        
+        if (Input.GetKey(KeyCode.LeftControl) && isOnGround)
         {
             sliding = true;
-            
+
         }
         else if(sliding)
         {
