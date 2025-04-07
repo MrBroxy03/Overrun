@@ -127,9 +127,9 @@ public class MovementController : MonoBehaviour
         else if(sliding)
         {
             Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.up), out RaycastHit upCheck, 1.5f);
-            Debug.Log(upCheck.collider);
             if (upCheck.collider == null)
             {
+                rigidB.AddForce(transform.forward * (30f), ForceMode.Impulse);
                 sliding = false;
                 this.transform.localScale = Vector3.one;
             } 
@@ -154,7 +154,7 @@ public class MovementController : MonoBehaviour
             }
             else
             {
-             jumpCD = 0;
+                jumpCD = 0;
             }
     }
 
