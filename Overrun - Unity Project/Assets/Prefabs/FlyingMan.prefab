@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 1077045671423150868}
   - component: {fileID: 5934517760072345446}
   m_Layer: 0
-  m_Name: Flying Man
+  m_Name: FlyingMan
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

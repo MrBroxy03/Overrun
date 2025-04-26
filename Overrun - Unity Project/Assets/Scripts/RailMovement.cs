@@ -60,6 +60,11 @@ public class RailMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("Rail") && movementTimeout == 0)
         {
             SplineContainer container = collision.gameObject.GetComponentInParent<SplineContainer>();
+            if (container != null)
+            {
+                this.splineAnimate.Container = container;
+            }
+            
             if (splineAnimate != null & startMovement == false)
             {
                 splineAnimate.enabled = true;

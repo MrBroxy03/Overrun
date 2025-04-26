@@ -46,7 +46,7 @@ public class HomingAttack : MonoBehaviour
                     {
                         Debug.Log("lalala lava");
                         homingAttack = true;
-                        MaskMeter.meter -= 20;
+                        MaskMeter.meter -= 70;
                     }
                 }
                 Debug.DrawRay(Camera.main.transform.position, dir * raycast, Color.blue);

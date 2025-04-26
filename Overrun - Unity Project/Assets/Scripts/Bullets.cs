@@ -16,7 +16,7 @@ public class Bullets : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("Ground") )
         {
-            Destroy(gameObject);
+            Destroy(gameObject, 0.1f);
         }
     }
 }

@@ -7,6 +7,7 @@ public class EnemyHP : MonoBehaviour
     public float HP = 3;
     public float hitFlash = 0f;
     public MeshRenderer mesh;
+    int meter = MaskMeter.meter;
 
     void Start()
     {
@@ -19,6 +20,7 @@ public class EnemyHP : MonoBehaviour
         {
             var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
             killEnemy.removeEnemy(gameObject);
+            MaskMeter.meter += 30;
             Destroy(gameObject);   
         }
 

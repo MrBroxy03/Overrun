@@ -25,15 +25,19 @@ public class PlayerHealth : MonoBehaviour
         boosting = gameObject.GetComponent<MovementController>();
     }
 
-    public void OnCollisionEnter(Collision collision)
+    public void OnCollisionStay(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0 && !plyCombat.isGroundPound && !hAttack.homingAttack && !boosting.isBoosting)
+        if (plyCombat.groundPoundAttack == 0 && !hAttack.homingAttack && !boosting.isBoosting)
         {
-            health = health - 1;
-            hitCountdown = 1f;
-            StartCoroutine(cameraShake.Shaking(.50f, .15f));
-            ChangeUI();
+            if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0)
+            {
+                health = health - 1;
+                hitCountdown = 1f;
+                StartCoroutine(cameraShake.Shaking(.50f, .15f));
+                ChangeUI();
+            }
         }
+        
 
         if (collision.gameObject.CompareTag("Water"))
         {
@@ -61,10 +65,6 @@ public class PlayerHealth : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.T))
-        {
-            StartCoroutine(cameraShake.Shaking(.20f, .4f));
-        }
         if (health == 3 && HP1 != null)
         {
             HP3.SetActive(true);
