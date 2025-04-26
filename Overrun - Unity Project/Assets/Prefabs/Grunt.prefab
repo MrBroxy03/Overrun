@@ -71,6 +71,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2181225290695114797, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+  waypoints: []
+  speed: 5
   spotDistance: 10
   coneOfVisionRadius: 30
   attackRange: 0
@@ -115,8 +117,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 7.3133035
-  m_Center: {x: -0.000022938462, y: 0, z: -6.8132935}
+  m_Radius: 6.9259515
+  m_Center: {x: 0.9235821, y: 0.998876, z: -1.5220015}
 --- !u!1001 &8740440350977538783
 PrefabInstance:
   m_ObjectHideFlags: 0

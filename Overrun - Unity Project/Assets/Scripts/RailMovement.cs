@@ -6,8 +6,8 @@ using UnityEngine.Splines;
 public class RailMovement : MonoBehaviour
 {
     [SerializeField]
-    private SplineAnimate splineAnimate;
-    private SplineContainer spline;
+    public SplineAnimate splineAnimate;
+    public SplineContainer spline;
     private bool startMovement = false;
     private float movementTimeout = 0f;
     private float railDuration = 0f;
@@ -59,6 +59,7 @@ public class RailMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Rail") && movementTimeout == 0)
         {
+            SplineContainer container = collision.gameObject.GetComponentInParent<SplineContainer>();
             if (splineAnimate != null & startMovement == false)
             {
                 splineAnimate.enabled = true;

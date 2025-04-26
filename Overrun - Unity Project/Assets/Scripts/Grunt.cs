@@ -8,7 +8,7 @@ public class Grunt : MonoBehaviour
     public Enemy enemy;
 
     public List<GameObject> waypoints = new List<GameObject>();
-    float speed = 10f;
+    public float speed = 5f;
     float rotSpeed = 10f;
     int accuracy = 3;
     GameObject currentWP;
@@ -35,17 +35,20 @@ public class Grunt : MonoBehaviour
             enemyState = enemy.CanSeePlayer();
             if (enemyState == State.GoToPlayer)
             {
+                Debug.Log("Shut up buzz");
                 enemyState = enemy.InRange();
                 enemy.LookAtPlayer();
                 if (enemyState == State.AttackPlayer)
                 {
                     enemy.GotoPlayer();
+                    Debug.Log("I'll kill you");
                 }
                 else
                 {
                     enemy.GotoPlayer();
                 }
             } else {
+                Debug.Log("Wapoints baby");
                 if (Vector3.Distance(this.transform.position, currentWP.transform.position) < accuracy)
                 {
                     currentWPIndex++;

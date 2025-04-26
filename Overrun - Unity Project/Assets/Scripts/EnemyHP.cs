@@ -27,7 +27,7 @@ public class EnemyHP : MonoBehaviour
             hitFlash -= Time.deltaTime;
         } else {
             hitFlash = 0;
-            mesh.material.color = Color.white;
+            mesh.material.color = Color.yellow;
         }
         
     }

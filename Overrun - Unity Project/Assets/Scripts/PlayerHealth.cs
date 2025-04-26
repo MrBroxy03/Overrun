@@ -14,6 +14,7 @@ public class PlayerHealth : MonoBehaviour
 
     private PlayerCombat plyCombat;
     private HomingAttack hAttack;
+    private MovementController boosting;
 
     public CameraShake cameraShake;
     
@@ -21,11 +22,12 @@ public class PlayerHealth : MonoBehaviour
     {
         plyCombat = gameObject.GetComponent<PlayerCombat>();
         hAttack = gameObject.GetComponent<HomingAttack>();
+        boosting = gameObject.GetComponent<MovementController>();
     }
 
     public void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0 && !plyCombat.isGroundPound && !hAttack.homingAttack)
+        if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0 && !plyCombat.isGroundPound && !hAttack.homingAttack && !boosting.isBoosting)
         {
             health = health - 1;
             hitCountdown = 1f;
