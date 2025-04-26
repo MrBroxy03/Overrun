@@ -54,12 +54,7 @@ public class MovementController : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.forward), out RaycastHit fowardCheck, 1f);
-                if (fowardCheck.collider == null)
-                {
-                    moveFoward = movementSpeed;
-
-                }
+                moveFoward = movementSpeed;
             }
             if (Input.GetKey(KeyCode.S))
             {
@@ -196,13 +191,13 @@ public class MovementController : MonoBehaviour
 
     private bool CheckGround()
     {
-        Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1f, Color.red);
+        Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1.05f, Color.red);
 
-        Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1f);
+        Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1.05f);
         if (bodyCheck2.collider != null && bodyCheck2.collider.gameObject.CompareTag("Enemy")){
             return false;
         }
-        return Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck25, 1f); ;
+        return Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck25, 1.05f); ;
     }
 
     void Jump()

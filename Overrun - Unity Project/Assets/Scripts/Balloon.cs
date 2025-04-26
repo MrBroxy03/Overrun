@@ -15,12 +15,9 @@ public class Balloon : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("Kaddosh");
-        Debug.Log(collision.gameObject.tag);
         Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
         if (BalloonsCollider != null && collision.gameObject.CompareTag("Player") && rb != null)
         {
-            Debug.Log("Kadooshed");
             rb.AddForce((transform.up * JumpForce), ForceMode.Impulse);
             Destroy(this.gameObject);
         }
