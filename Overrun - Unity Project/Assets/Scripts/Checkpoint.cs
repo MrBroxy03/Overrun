@@ -5,21 +5,21 @@ using UnityEngine;
 public class Checkpoint : MonoBehaviour
 {
 
-    public GameObject checkpoint;
-    public GameObject startingPosition;
+    private int currentCheckpoint = 0;
+    [SerializeField] public GameObject[] checkpoints;
     int health = PlayerHealth.health;
 
     void Start()
     {
-        this.transform.position = startingPosition.transform.position;
+        currentCheckpoint = 0;
+        this.transform.position = checkpoints[0].transform.position;
     }
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Checkpoint"))
+        if (collision.gameObject.CompareTag("Checkpoint") && collision.gameObject.GetComponent<Collider>().enabled)
         {
-            checkpoint = collision.gameObject;
-            checkpoint.GetComponent<Collider>().enabled = false;
-            Debug.Log("Got a checkpoint!");
+            collision.gameObject.GetComponent<Collider>().enabled = false;
+            currentCheckpoint = Mathf.Clamp(currentCheckpoint+1,currentCheckpoint, checkpoints.Length-1);
         }
     }
 
@@ -27,13 +27,21 @@ public class Checkpoint : MonoBehaviour
     {
         if (PlayerHealth.health == 0)
         {
-            if (checkpoint == null)
-            {
-                this.transform.position = startingPosition.transform.position;
-            } else {
-                this.transform.position = checkpoint.transform.position;
-            }
+            this.transform.position = checkpoints[currentCheckpoint].transform.position;
             PlayerHealth.health = 3;
+        }
+
+        if (Input.GetKeyUp(KeyCode.Alpha1) && currentCheckpoint > 0)
+        {
+            
+            this.transform.position = checkpoints[currentCheckpoint-1].transform.position;
+            currentCheckpoint -= 1;
+        }
+        if (Input.GetKeyUp(KeyCode.Alpha2) && currentCheckpoint < checkpoints.Length-1)
+        {
+            checkpoints[currentCheckpoint + 1].gameObject.GetComponent<Collider>().enabled = false;
+            this.transform.position = checkpoints[currentCheckpoint + 1].transform.position;
+            currentCheckpoint += 1;
         }
     }
 }

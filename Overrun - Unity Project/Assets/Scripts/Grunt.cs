@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class Grunt : MonoBehaviour
 {
-    public Transform player;
     public Enemy enemy;
-
+    private EnemyManager enemyManager;
     public List<GameObject> waypoints = new List<GameObject>();
     public float speed = 5f;
     float rotSpeed = 10f;
@@ -23,7 +22,8 @@ public class Grunt : MonoBehaviour
 
     private void Start()
     {
-       enemy = new Enemy(this.gameObject, player, coneOfVisionRadius, spotDistance,attackRange);  
+       enemyManager = FindAnyObjectByType<EnemyManager>();
+       enemy = new Enemy(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
 
        currentWP = waypoints[0];
     }
@@ -35,20 +35,10 @@ public class Grunt : MonoBehaviour
             enemyState = enemy.CanSeePlayer();
             if (enemyState == State.GoToPlayer)
             {
-                Debug.Log("Shut up buzz");
                 enemyState = enemy.InRange();
                 enemy.LookAtPlayer();
-                if (enemyState == State.AttackPlayer)
-                {
-                    enemy.GotoPlayer();
-                    Debug.Log("I'll kill you");
-                }
-                else
-                {
-                    enemy.GotoPlayer();
-                }
+                enemy.GotoPlayer();
             } else {
-                Debug.Log("Wapoints baby");
                 if (Vector3.Distance(this.transform.position, currentWP.transform.position) < accuracy)
                 {
                     currentWPIndex++;
@@ -68,11 +58,7 @@ public class Grunt : MonoBehaviour
 
         if (spottedPlayerCooldown > 0)
         {
-            spottedPlayerCooldown -= Time.deltaTime;
-        }
-        else
-        {
-            spottedPlayerCooldown = 0f;
+            spottedPlayerCooldown = Mathf.Clamp(spottedPlayerCooldown - Time.deltaTime, 0, spottedPlayerCooldown);
         }
     }
 }

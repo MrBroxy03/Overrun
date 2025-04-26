@@ -4,10 +4,8 @@ using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
 {
-    public Transform player;
-    public GameObject bullet;
     public Enemy enemy;
-
+    private EnemyManager enemyManager;
     public float spotDistance = 10f;
     private float spottedPlayerCooldown = 0f;
     private float shootCooldown = 0f;
@@ -17,7 +15,8 @@ public class FlyingEnemy : MonoBehaviour
     State enemyState = State.Idle;
     private void Start()
     {
-       enemy = new Enemy(this.gameObject, player, coneOfVisionRadius, spotDistance,attackRange);  
+        enemyManager = FindAnyObjectByType<EnemyManager>();
+        enemy = new Enemy(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
     }
 
 
@@ -32,11 +31,11 @@ public class FlyingEnemy : MonoBehaviour
                 spottedPlayerCooldown = 2f;
                 enemyState = enemy.InRange();
                 enemy.LookAtPlayer();
-                if (enemyState == State.AttackPlayer)
+                if (enemyState == State.AttackPlayer && shootCooldown == 0)
                 {
                     ShootBullet();
                 }
-                else
+                else if(enemyState != State.AttackPlayer)
                 {
                     enemy.GotoPlayer();
                 }
@@ -54,31 +53,20 @@ public class FlyingEnemy : MonoBehaviour
 
         if (spottedPlayerCooldown > 0)
         {
-            spottedPlayerCooldown -= Time.deltaTime;
-        }
-        else
-        {
-            spottedPlayerCooldown = 0f;
+            spottedPlayerCooldown = Mathf.Clamp(spottedPlayerCooldown - Time.deltaTime, 0, spottedPlayerCooldown);
         }
 
         if (shootCooldown > 0)
         {
-            shootCooldown -= Time.deltaTime;
-        }
-        else
-        {
-            shootCooldown = 0f;
+            shootCooldown = Mathf.Clamp(shootCooldown - Time.deltaTime, 0, shootCooldown);
         }
     }
-
     void ShootBullet()
     {
         if (shootCooldown == 0f)
         {
-            shootCooldown = 1.5f;
-            Instantiate(bullet, this.transform.position, this.transform.rotation);
+            shootCooldown = 2;
+            Instantiate(enemyManager.bullet, this.transform.position, this.transform.rotation);
         }
     }
-
-
 }

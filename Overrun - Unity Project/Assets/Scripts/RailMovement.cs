@@ -30,7 +30,6 @@ public class RailMovement : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(railDuration);
         if (railTimer >= railDuration  && startMovement == true)
         {
             movementTimeout = 0.5f;
@@ -70,7 +69,7 @@ public class RailMovement : MonoBehaviour
                 splineAnimate.enabled = true;
                 splineAnimate.Restart(true);
                 startMovement = true;
-                MaskMeter.meter += 100;
+                MaskMeter.meter = 300;
             }
         }
     }

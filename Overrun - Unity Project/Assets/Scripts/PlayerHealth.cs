@@ -2,24 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
     public static int health = 3;
-    public float hitCountdown = 0f;
+    private float hitCountdown = 0f;
 
-    public GameObject HP3;
-    public GameObject HP2;
-    public GameObject HP1;
+    public GameObject hP3;
+    public GameObject hP2;
+    public GameObject hP1;
 
     private PlayerCombat plyCombat;
     private HomingAttack hAttack;
     private MovementController boosting;
 
+    private bool godMode = false;
+
     public CameraShake cameraShake;
-    
+
+    private Image health1Image;
+    private Image health2Image;
+    private Image health3Image;
     private void Start()
     {
+        health1Image = hP1.GetComponent<Image>();
+        health2Image = hP2.GetComponent<Image>();
+        health3Image = hP3.GetComponent<Image>();
         plyCombat = gameObject.GetComponent<PlayerCombat>();
         hAttack = gameObject.GetComponent<HomingAttack>();
         boosting = gameObject.GetComponent<MovementController>();
@@ -29,7 +38,7 @@ public class PlayerHealth : MonoBehaviour
     {
         if (plyCombat.groundPoundAttack == 0 && !hAttack.homingAttack && !boosting.isBoosting)
         {
-            if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0)
+            if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0 && !godMode)
             {
                 health = health - 1;
                 hitCountdown = 1f;
@@ -49,27 +58,49 @@ public class PlayerHealth : MonoBehaviour
     {
         if (health == 2)
         {
-            HP3.SetActive(false);
+            hP3.SetActive(false);
         }
 
         if (health == 1)
         {
-            HP2.SetActive(false);
+            hP2.SetActive(false);
         }
 
         if (health == 0)
         {
-            HP1.SetActive(false);
+            hP1.SetActive(false);
         }
     }
-
+    private bool pressingKey = false;
     void Update()
     {
-        if (health == 3 && HP1 != null)
+        if (Input.GetKeyDown(KeyCode.H) && !pressingKey)
         {
-            HP3.SetActive(true);
-            HP2.SetActive(true);
-            HP1.SetActive(true);
+            pressingKey = true;
+            godMode = !godMode;
+            if (godMode)
+            {
+                health1Image.color = Color.yellow;
+                health2Image.color = Color.yellow;
+                health3Image.color = Color.yellow;
+            }
+            else
+            {
+                health1Image.color = Color.red;
+                health2Image.color = Color.red;
+                health3Image.color = Color.red;
+            }   
+        }
+        if (Input.GetKeyUp(KeyCode.H))
+        {
+            pressingKey = false;
+        }
+
+        if (health == 3 && hP1 != null)
+        {
+            hP3.SetActive(true);
+            hP2.SetActive(true);
+            hP1.SetActive(true);
         }
 
         if (hitCountdown > 0)

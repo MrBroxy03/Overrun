@@ -125,8 +125,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c46ea1127e26d447a2542c1caa0ae32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
-  hitFlash: 0
+  healthPoints: 3
   mesh: {fileID: 0}
 --- !u!195 &1077045671423150868
 NavMeshAgent:
@@ -163,10 +162,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2181225290695114797, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-  bullet: {fileID: 1396782574195810056, guid: 0c999a69eee637943857b39b73f8569b, type: 3}
-  spotDistance: 10
+  bullet: {fileID: 8589341705358213320, guid: 0c999a69eee637943857b39b73f8569b, type: 3}
+  spotDistance: 15
   coneOfVisionRadius: 45
-  attackRange: 7
+  attackRange: 10
 --- !u!1 &4066348589865391081
 GameObject:
   m_ObjectHideFlags: 0

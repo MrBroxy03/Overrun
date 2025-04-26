@@ -29,11 +29,10 @@ public class Enemy
     protected State state = State.Idle;
     protected NavMeshAgent navMeshAgent;
     protected Vector3 patrolSpot;
-    public Enemy(GameObject _npc, Transform _player, float coneVision, float visionRange,float atkrange)
+    public Enemy(GameObject _npc,Transform playerTransform, float coneVision, float visionRange,float atkrange)
     {
-
         this.npc = _npc;
-        this.player = _player;
+        this.player = playerTransform;
         this.visionRadius = coneVision;
         this.visionRange = visionRange;
         this.attackRange = atkrange;
@@ -78,8 +77,6 @@ public class Enemy
     public void BackToSpot()
     {
         this.navMeshAgent.isStopped = false;
-        Debug.Log("Hi");
-        Debug.Log(this.patrolSpot);
         this.navMeshAgent.SetDestination(this.patrolSpot);
     }
 
@@ -96,5 +93,6 @@ public class Enemy
     {
         this.npc.transform.LookAt(this.player.transform.position);      
     }
+
 }
 

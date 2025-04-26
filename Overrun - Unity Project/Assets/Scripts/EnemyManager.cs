@@ -2,13 +2,17 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class EnemyManager : MonoBehaviour
 {
-    public List<GameObject> enemies = new List<GameObject>();
 
+    public Transform player_Transform;
+    public GameObject bullet;
+   
+    private List<GameObject> enemies = new List<GameObject>();
     void Start()
     {
-        foreach(GameObject badGuys in  GameObject.FindGameObjectsWithTag("Enemy")){
+        foreach (GameObject badGuys in  GameObject.FindGameObjectsWithTag("Enemy")){
             enemies.Add(badGuys);
         };
     }

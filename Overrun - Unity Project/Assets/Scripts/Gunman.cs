@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Gunman : MonoBehaviour
 {
-    public Transform player;
-    public GameObject bullet;
     public Enemy enemy;
 
+    private EnemyManager enemyManager;
     public float spotDistance = 10f;
     public float shootCooldown = 0f;
     public float coneOfVisionRadius = 45f;
@@ -15,7 +14,10 @@ public class Gunman : MonoBehaviour
 
     private void Start()
     {
-       enemy = new Enemy(this.gameObject, player, coneOfVisionRadius, spotDistance, attackRange);  
+        enemyManager = FindAnyObjectByType<EnemyManager>();
+
+        enemy = new Enemy(this.gameObject, enemyManager.player_Transform, coneOfVisionRadius, spotDistance, attackRange);
+
     }
 
 
@@ -27,19 +29,20 @@ public class Gunman : MonoBehaviour
             if (CanSee == State.GoToPlayer)
             {
                 enemy.LookAtPlayer();
-                ShootBullet();
+                if (shootCooldown == 0f)
+                {
+                    ShootBullet();
+                }
+                   
             }
         }
 
  
         if (shootCooldown > 0)
         {
-            shootCooldown -= Time.deltaTime;
+            shootCooldown = Mathf.Clamp(shootCooldown - Time.deltaTime, 0, shootCooldown);
         }
-        else
-        {
-            shootCooldown = 0f;
-        }
+ 
     }
 
     void ShootBullet()
@@ -47,7 +50,7 @@ public class Gunman : MonoBehaviour
         if (shootCooldown == 0f)
         {
             shootCooldown = 2;
-            Instantiate(bullet, this.transform.position, this.transform.rotation);
+            Instantiate(enemyManager.bullet, this.transform.position, this.transform.rotation);
         }
     }
 

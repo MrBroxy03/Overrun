@@ -225,8 +225,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46995baed03e9c4459b66aa6fe458e73, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2181225290695114797, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-  bullet: {fileID: 8589341705358213320, guid: 0c999a69eee637943857b39b73f8569b, type: 3}
   spotDistance: 10
   shootCooldown: 0
   coneOfVisionRadius: 45
@@ -243,6 +241,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c46ea1127e26d447a2542c1caa0ae32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 3
-  hitFlash: 0
-  mesh: {fileID: 0}
+  healthPoints: 2

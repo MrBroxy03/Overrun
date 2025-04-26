@@ -33,7 +33,6 @@ public class PlayerCombat : MonoBehaviour
     {
         if (isGroundPound)
         {
-            Debug.Log("BOom");
             MvController.ChangeGravity(7000f);
         }
         else
@@ -45,8 +44,7 @@ public class PlayerCombat : MonoBehaviour
     private void Update()
     {
         bool isOnGround = MvController.isOnGround;
-        //Debug.Log("IsOnGround: " + isOnGround);
-        //Debug.Log("GrounPounding: " + isGroundPound);
+
         if (isOnGround && isGroundPound)
         {
             Destroy(gpHitbox);

@@ -125,14 +125,12 @@ public class MovementController : MonoBehaviour
             movementSpeed = 8.0f;
             isBoosting = false;
         }
+        
         if (jumpCD > 0)
         {
-            jumpCD -= Time.deltaTime;
+            jumpCD = Mathf.Clamp(jumpCD - Time.deltaTime, 0, jumpCD);
         }
-        else
-        {
-            jumpCD = 0;
-        }
+       
 
         if (sliding)
         {

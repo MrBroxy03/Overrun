@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
 {
-    public float HP = 3;
-    public float hitFlash = 0f;
-    public MeshRenderer mesh;
-    int meter = MaskMeter.meter;
+    public float healthPoints = 3;
+    private float hitFlashcooldown = 0f;
+    private MeshRenderer mesh;
 
     void Start()
     {
@@ -16,19 +15,21 @@ public class EnemyHP : MonoBehaviour
 
     void Update()
     {
-        if (HP == 0)
+        if (healthPoints == 0)
         {
             var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
             killEnemy.removeEnemy(gameObject);
-            MaskMeter.meter += 30;
+            
+            MaskMeter.meter = Mathf.Clamp(MaskMeter.meter+30,0,300);
+            
             Destroy(gameObject);   
         }
 
-        if (hitFlash > 0)
+        if (hitFlashcooldown > 0)
         {
-            hitFlash -= Time.deltaTime;
+            hitFlashcooldown -= Time.deltaTime;
         } else {
-            hitFlash = 0;
+            hitFlashcooldown = 0;
             mesh.material.color = Color.yellow;
         }
         
@@ -37,10 +38,10 @@ public class EnemyHP : MonoBehaviour
     private void OnTriggerEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("PlayerHitbox"))
-        { 
-            hitFlash = 0.4f;
+        {
+            hitFlashcooldown = 0.4f;
             mesh.material.color = Color.red;
-            HP = HP - 1;
+            healthPoints = healthPoints - 1;
         }
     }
 }
