@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 2181225290695114797, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-  bullet: {fileID: 1396782574195810056, guid: 0c999a69eee637943857b39b73f8569b, type: 3}
+  bullet: {fileID: 8589341705358213320, guid: 0c999a69eee637943857b39b73f8569b, type: 3}
   spotDistance: 10
   shootCooldown: 0
   coneOfVisionRadius: 45
@@ -246,4 +246,3 @@ MonoBehaviour:
   HP: 3
   hitFlash: 0
   mesh: {fileID: 0}
-  originalColor: {r: 1, g: 0.5588885, b: 0, a: 0}
