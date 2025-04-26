@@ -84,7 +84,10 @@ public class Enemy
     {
         this.navMeshAgent.isStopped = true;
     }
-
+    public void GotoPlace(Transform place)
+    {
+        this.navMeshAgent.SetDestination(place.position);
+    }
     public void GotoPlayer()
     {
         this.navMeshAgent.SetDestination(this.player.position);

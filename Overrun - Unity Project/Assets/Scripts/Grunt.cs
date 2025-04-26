@@ -50,9 +50,7 @@ public class Grunt : MonoBehaviour
                     currentWPIndex = 0;
                 }
 
-                Quaternion lookat = Quaternion.LookRotation(currentWP.transform.position - this.transform.position);
-                this.transform.rotation = Quaternion.Slerp(this.transform.rotation, lookat, rotSpeed * Time.deltaTime);
-                this.transform.Translate(0, 0, speed * Time.deltaTime);
+                enemy.GotoPlace(currentWP.transform);
             }
         }
 

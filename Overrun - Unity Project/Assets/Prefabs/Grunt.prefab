@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 6947531293118673473}
   - component: {fileID: 8631619354998139084}
   - component: {fileID: -6472863621058311523}
+  - component: {fileID: 4084513787038527439}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Enemy
@@ -70,7 +71,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3c4c03778e62ea4489a7577ed6f8193, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2181225290695114797, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
   waypoints: []
   speed: 5
   spotDistance: 10
@@ -119,6 +119,19 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 6.9259515
   m_Center: {x: 0.9235821, y: 0.998876, z: -1.5220015}
+--- !u!114 &4084513787038527439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705613065955359000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1c46ea1127e26d447a2542c1caa0ae32, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 3
 --- !u!1001 &8740440350977538783
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -25,12 +25,15 @@ public class EnemyHP : MonoBehaviour
             Destroy(gameObject);   
         }
 
+
         if (hitFlashcooldown > 0)
         {
             hitFlashcooldown -= Time.deltaTime;
         } else {
             hitFlashcooldown = 0;
-            mesh.material.color = Color.yellow;
+            if (mesh != null) {
+                mesh.material.color = Color.yellow;
+            }
         }
         
     }
@@ -40,7 +43,10 @@ public class EnemyHP : MonoBehaviour
         if (collision.gameObject.CompareTag("PlayerHitbox"))
         {
             hitFlashcooldown = 0.4f;
-            mesh.material.color = Color.red;
+            if (mesh != null)
+            {
+                mesh.material.color = Color.red;
+            }
             healthPoints = healthPoints - 1;
         }
     }
