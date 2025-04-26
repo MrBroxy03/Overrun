@@ -5,6 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
+  - Enemy
+  - Checkpoint
+  - StartingPosition
+  - Rail
+  - PlayerHitbox
+  - EndGoal
+  - Manager
+  - Water
   layers:
   - Default
   - TransparentFX
