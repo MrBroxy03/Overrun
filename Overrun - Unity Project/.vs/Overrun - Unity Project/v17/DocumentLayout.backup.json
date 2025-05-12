@@ -3,60 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|c:\\users\\broxy\\onedrive\\ambiente de trabalho\\iadestuff\\overrun\\overrun - unity project\\assets\\scripts\\endgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\endgoal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\enemy_behaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|c:\\users\\broxy\\onedrive\\ambiente de trabalho\\iadestuff\\overrun\\overrun - unity project\\assets\\scripts\\enemy_behaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemy_behaviour.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\homingattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\homingattack.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\enemyhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemyhp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\grunt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\grunt.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movementcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\playerhealth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\railmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\railmovement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\maskmeter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\maskmeter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\checkpoint.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\gunman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\gunman.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\flyingenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\flyingenemy.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\enemymanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\assets\\scripts\\bullets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{15FC624B-00D6-5F52-64C2-FA7DC9F5FE2F}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\bullets.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -71,171 +19,15 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "EndGoal.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\EndGoal.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EndGoal.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\EndGoal.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EndGoal.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:31:42.468Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "HomingAttack.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\HomingAttack.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\HomingAttack.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\HomingAttack.cs",
-              "RelativeToolTip": "Assets\\Scripts\\HomingAttack.cs",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAgwEIAAAAhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:23:16.309Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Enemy_Behaviour.cs",
               "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Enemy_Behaviour.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Enemy_Behaviour.cs",
               "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Enemy_Behaviour.cs",
               "RelativeToolTip": "Assets\\Scripts\\Enemy_Behaviour.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwDQAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T22:04:43.843Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MaskMeter.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\MaskMeter.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MaskMeter.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\MaskMeter.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MaskMeter.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAAwCQAAABpAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:41:22.166Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Grunt.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Grunt.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Grunt.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Grunt.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Grunt.cs",
-              "ViewState": "AgIAACEAAAAAAAAAAAAYwDIAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:36:25.844Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "RailMovement.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\RailMovement.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\RailMovement.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\RailMovement.cs",
-              "RelativeToolTip": "Assets\\Scripts\\RailMovement.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEcAAAAjAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:17:22.534Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PlayerHealth.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\PlayerHealth.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\PlayerHealth.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\PlayerHealth.cs",
-              "RelativeToolTip": "Assets\\Scripts\\PlayerHealth.cs",
-              "ViewState": "AgIAADsAAAAAAAAAAAAgwEkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T19:10:37.389Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "MovementController.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\MovementController.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\MovementController.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\MovementController.cs",
-              "RelativeToolTip": "Assets\\Scripts\\MovementController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAwF8AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T18:36:36.795Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Checkpoint.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Checkpoint.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Checkpoint.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Checkpoint.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Checkpoint.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABQAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T18:20:31.282Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "EnemyManager.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\EnemyManager.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyManager.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\EnemyManager.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemyManager.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:31:11.813Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Bullets.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Bullets.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Bullets.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Bullets.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Bullets.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:30:36.59Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "FlyingEnemy.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\FlyingEnemy.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\FlyingEnemy.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\FlyingEnemy.cs",
-              "RelativeToolTip": "Assets\\Scripts\\FlyingEnemy.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAmAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:21:39.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Gunman.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Gunman.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\Gunman.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\Gunman.cs",
-              "RelativeToolTip": "Assets\\Scripts\\Gunman.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:21:14.718Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "EnemyHP.cs",
-              "DocumentMoniker": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\EnemyHP.cs",
-              "RelativeDocumentMoniker": "Assets\\Scripts\\EnemyHP.cs",
-              "ToolTip": "C:\\Users\\Broxy\\OneDrive\\Ambiente de Trabalho\\IadeStuff\\Overrun\\Overrun - Unity Project\\Assets\\Scripts\\EnemyHP.cs",
-              "RelativeToolTip": "Assets\\Scripts\\EnemyHP.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAA1wDAAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-26T15:14:02.882Z"
+              "WhenOpened": "2025-05-07T14:35:33.021Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -92,6 +92,8 @@ public class Enemy
     {
         this.navMeshAgent.SetDestination(this.player.position);
     }
+
+
     public void LookAtPlayer()
     {
         this.npc.transform.LookAt(this.player.transform.position);      
