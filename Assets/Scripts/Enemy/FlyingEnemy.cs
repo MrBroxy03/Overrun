@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FlyingEnemy : MonoBehaviour
 {
-    public Enemy enemy;
+    public EnemyBehaviour enemy;
     private EnemyManager enemyManager;
     public float spotDistance = 10f;
     private float spottedPlayerCooldown = 0f;
@@ -16,7 +16,7 @@ public class FlyingEnemy : MonoBehaviour
     private void Start()
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
-        enemy = new Enemy(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
+        enemy = new EnemyBehaviour(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
     }
 
 

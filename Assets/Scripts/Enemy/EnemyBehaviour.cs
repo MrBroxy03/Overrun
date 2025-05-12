@@ -19,7 +19,7 @@ public enum PatrolType
     Patrol
 
 };
-public class Enemy
+public class EnemyBehaviour
 {
     protected GameObject npc;
     protected Transform player;
@@ -29,7 +29,7 @@ public class Enemy
     protected State state = State.Idle;
     protected NavMeshAgent navMeshAgent;
     protected Vector3 patrolSpot;
-    public Enemy(GameObject _npc,Transform playerTransform, float coneVision, float visionRange,float atkrange)
+    public EnemyBehaviour(GameObject _npc,Transform playerTransform, float coneVision, float visionRange,float atkrange)
     {
         this.npc = _npc;
         this.player = playerTransform;

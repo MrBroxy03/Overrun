@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Grunt : MonoBehaviour
 {
-    public Enemy enemy;
+    public EnemyBehaviour enemy;
     private EnemyManager enemyManager;
     public List<GameObject> waypoints = new List<GameObject>();
     public float speed = 5f;
@@ -22,7 +22,7 @@ public class Grunt : MonoBehaviour
     private void Start()
     {
        enemyManager = FindAnyObjectByType<EnemyManager>();
-       enemy = new Enemy(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
+       enemy = new EnemyBehaviour(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
 
        currentWP = waypoints[0];
     }
