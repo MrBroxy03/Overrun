@@ -6,7 +6,7 @@ public class PlayerCombat : MonoBehaviour
 {
     private MovementController MvController;
 
-    public bool isPunching = false;
+    private bool isPunching = false;
     public bool canPunch = false;
 
     public float punchTimer = 0f;

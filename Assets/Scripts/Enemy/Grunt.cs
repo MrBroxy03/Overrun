@@ -43,7 +43,6 @@ public class Grunt : MonoBehaviour
                     currentWPIndex++;
                     currentWP = waypoints[currentWPIndex];
                 }
-                Debug.Log(currentWPIndex);
                 if (currentWPIndex >= waypoints.Count - 1)
                 {
                     currentWPIndex = 0;

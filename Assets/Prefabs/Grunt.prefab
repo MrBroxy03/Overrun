@@ -9,10 +9,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 908482721546857779}
-  - component: {fileID: 6947531293118673473}
   - component: {fileID: 8631619354998139084}
   - component: {fileID: -6472863621058311523}
-  - component: {fileID: 4084513787038527439}
+  - component: {fileID: 2167921874819818121}
+  - component: {fileID: 3911124054265061443}
   m_Layer: 0
   m_Name: Grunt
   m_TagString: Enemy
@@ -36,24 +36,6 @@ Transform:
   - {fileID: 9135254210441174324}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: -55.605, z: 0}
---- !u!114 &6947531293118673473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4705613065955359000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f3c4c03778e62ea4489a7577ed6f8193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  waypoints: []
-  speed: 5
-  accuracy: 3
-  spotDistance: 10
-  coneOfVisionRadius: 30
-  attackRange: 0
 --- !u!195 &8631619354998139084
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -97,7 +79,7 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 2.53
   m_Center: {x: -0.45, y: 3.17, z: 1.68}
---- !u!114 &4084513787038527439
+--- !u!114 &2167921874819818121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -106,10 +88,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 4705613065955359000}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c46ea1127e26d447a2542c1caa0ae32, type: 3}
+  m_Script: {fileID: 11500000, guid: eeea894c8edc7af4abcdf69b34099ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   healthPoints: 3
+--- !u!114 &3911124054265061443
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4705613065955359000}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27d5ea66ac3432e4ea23ab3e79a4eefc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waypoints: []
+  speed: 5
+  accuracy: 3
+  spotDistance: 10
+  coneOfVisionRadius: 45
+  attackRange: 0
 --- !u!1001 &8740440350977538783
 PrefabInstance:
   m_ObjectHideFlags: 0

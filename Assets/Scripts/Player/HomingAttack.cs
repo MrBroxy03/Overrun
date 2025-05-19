@@ -5,10 +5,10 @@ using UnityEngine.UI;
 
 public class HomingAttack : MonoBehaviour
 {
-    int meter = MaskMeter.meter;
-    bool jumping = MovementController.jumping;
+    public int meter = MaskMeter.meter;
+    public bool jumping = MovementController.jumping;
     public bool homingAttack = false;
-    public float attackTimeout = 0f;
+    private float attackTimeout = 0f;
     private float raycast = 60f;
     private Rigidbody rigidB;
 

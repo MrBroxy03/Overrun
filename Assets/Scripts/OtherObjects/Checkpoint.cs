@@ -27,6 +27,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (PlayerHealth.health == 0)
         {
+            Debug.Log("Bro was defeated");
             this.transform.position = checkpoints[currentCheckpoint].transform.position;
             PlayerHealth.health = 3;
         }

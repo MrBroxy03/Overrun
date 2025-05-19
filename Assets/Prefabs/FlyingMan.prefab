@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 2794477695379179835}
   - component: {fileID: 8297177265377149150}
   - component: {fileID: 3191695771997792007}
-  - component: {fileID: -4108156545299991378}
   - component: {fileID: 1077045671423150868}
-  - component: {fileID: 5934517760072345446}
+  - component: {fileID: 2056281747336137433}
+  - component: {fileID: 8669822408077556438}
   m_Layer: 0
   m_Name: FlyingMan
   m_TagString: Enemy
@@ -113,20 +113,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &-4108156545299991378
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576852095988057114}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c46ea1127e26d447a2542c1caa0ae32, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthPoints: 3
-  mesh: {fileID: 0}
 --- !u!195 &1077045671423150868
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -149,7 +135,7 @@ NavMeshAgent:
   m_BaseOffset: 2.8
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5934517760072345446
+--- !u!114 &2056281747336137433
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,14 +144,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 1576852095988057114}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05346d6ddac9c5348be9f79c2438cfaf, type: 3}
+  m_Script: {fileID: 11500000, guid: bd6537aa80fb5624aae8de1cc055bdca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 2181225290695114797, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-  bullet: {fileID: 8589341705358213320, guid: 0c999a69eee637943857b39b73f8569b, type: 3}
-  spotDistance: 15
+  spotDistance: 10
   coneOfVisionRadius: 45
-  attackRange: 10
+  attackRange: 7
+--- !u!114 &8669822408077556438
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1576852095988057114}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eeea894c8edc7af4abcdf69b34099ef0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthPoints: 1
 --- !u!1 &4066348589865391081
 GameObject:
   m_ObjectHideFlags: 0
