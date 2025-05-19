@@ -42,7 +42,6 @@ public class PlayerHealth : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0 && !godMode)
             {
-                Debug.Log("Getting hit");
                 health = health - 1;
                 hitCountdown = 1f;
                 StartCoroutine(cameraShake.Shaking(.50f, .15f));
@@ -53,8 +52,6 @@ public class PlayerHealth : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Water"))
         {
-            Debug.Log(collision.gameObject);
-            Debug.Log("boom");
             health = 0;
         }
     }
@@ -80,7 +77,6 @@ public class PlayerHealth : MonoBehaviour
     private bool pressingKey = false;
     void Update()
     {
-        Debug.Log(health);
         if (Input.GetKeyDown(KeyCode.H) && !pressingKey)
         {
             pressingKey = true;

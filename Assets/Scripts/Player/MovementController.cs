@@ -86,7 +86,7 @@ public class MovementController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (!jumping)
+            if (!jumping && isOnGround)
             {
                 Jump();
             }
@@ -175,12 +175,11 @@ public class MovementController : MonoBehaviour
     private bool CheckGround()
     {
         Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1.05f, Color.red);
-
         Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1.05f);
-        if (bodyCheck2.collider != null && bodyCheck2.collider.gameObject.CompareTag("Enemy")){
-            return false;
+        if (bodyCheck2.collider != null && !bodyCheck2.collider.gameObject.CompareTag("Enemy")) {
+            return true;
         }
-        return Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck25, 1.05f); ;
+        return false;
     }
 
     void Jump()

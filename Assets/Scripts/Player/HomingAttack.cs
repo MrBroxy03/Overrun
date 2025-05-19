@@ -1,23 +1,31 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
+using static UnityEngine.Rendering.DebugUI;
 
 public class HomingAttack : MonoBehaviour
 {
     public int meter = MaskMeter.meter;
     public bool jumping = MovementController.jumping;
     public bool homingAttack = false;
+    public float homingAttackRange = 50f;
     private float attackTimeout = 0f;
-    private float raycast = 60f;
     private Rigidbody rigidB;
 
     public CameraShake cameraShake;
     public RectTransform crosshair;
     public Camera cam;
 
+    private MovementController MvController;
+
     void Start()
     {
+        MvController = GetComponent<MovementController>();
+
         rigidB = GetComponent<Rigidbody>();
         crosshair.gameObject.SetActive(false);
     }
@@ -28,26 +36,33 @@ public class HomingAttack : MonoBehaviour
         GameObject targetEnemy = killEnemy.getEnemy(gameObject);
         
         bool showCrosshair = false;
-        if (MovementController.jumping)
+        if (!MvController.isOnGround && targetEnemy != null)
         {
-            if (targetEnemy.transform.position.y < this.gameObject.transform.position.y && targetEnemy != null && MaskMeter.meter != 0 && attackTimeout == 0)
-            {
-                Vector3 dir = (targetEnemy.transform.position - this.transform.position).normalized;
-                Physics.Raycast(Camera.main.transform.position, dir, out RaycastHit hitInfo, raycast);
+            Vector3 enemyPosition = targetEnemy.transform.position;
+            Vector3 PlayerPosition = cam.transform.position;
+            Vector3 dir = (enemyPosition - PlayerPosition).normalized;
 
-                if (hitInfo.collider != null && hitInfo.collider.gameObject.CompareTag("Enemy"))
+            float cosAngle = Vector3.Dot(dir, cam.transform.forward);
+            float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
+
+          
+            if (angle <= 15 && enemyPosition.y+.5 < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
+            {
+                int distance = Convert.ToInt32(Math.Round((enemyPosition - PlayerPosition).magnitude)-1);
+                Physics.Raycast(PlayerPosition, dir, out RaycastHit hitInfo, distance);
+                if(hitInfo.collider == null)
                 {
                     showCrosshair = true;
-                    Vector3 screenPos = cam.WorldToScreenPoint(targetEnemy.transform.position);
+                    Vector3 screenPos = cam.WorldToScreenPoint(enemyPosition);
                     crosshair.position = screenPos;
 
-                    if (Input.GetKey(KeyCode.Mouse0) && !homingAttack)
+                    if (Input.GetKey(KeyCode.Mouse0) && !homingAttack && MaskMeter.meter >= 70)
                     {
                         homingAttack = true;
                         MaskMeter.meter -= 70;
                     }
                 }
-                Debug.DrawRay(Camera.main.transform.position, dir * raycast, Color.blue);
+                
             }
         }
 
@@ -77,7 +92,7 @@ public class HomingAttack : MonoBehaviour
             Debug.Log("Doing for you");
             StartCoroutine(cameraShake.Shaking(.20f, .7f));
             Destroy(collision.gameObject);
-            rigidB.AddForce(transform.up * 10, ForceMode.Impulse);
+            rigidB.AddForce(transform.up * 15, ForceMode.Impulse);
             MaskMeter.meter += 5;
             attackTimeout = 1f;
             MovementController.jumping = true;

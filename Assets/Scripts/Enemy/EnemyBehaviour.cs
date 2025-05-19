@@ -43,10 +43,7 @@ public class EnemyBehaviour
     public State CanSeePlayer()
     {
         Vector3 distance = this.player.position-this.npc.transform.position;
-       
-        Debug.DrawRay(this.npc.transform.position, (this.npc.transform.forward + new Vector3(0,0,this.visionRadius*Mathf.Deg2Rad)) * this.visionRange, Color.red);
-        Debug.DrawRay(this.npc.transform.position, (this.npc.transform.forward - new Vector3(0, 0,this.visionRadius* Mathf.Deg2Rad)) * this.visionRange, Color.red);
-
+   
         if (distance.magnitude <= this.visionRange) 
         {
             float cosAngle = Vector3.Dot(distance.normalized, this.npc.transform.forward);
