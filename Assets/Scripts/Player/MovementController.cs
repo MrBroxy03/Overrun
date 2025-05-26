@@ -5,7 +5,11 @@ using UnityEngine;
 
 public class MovementController : MonoBehaviour
 {
-    public float movementSpeed = 8.0f;
+    public float walkSpeed = 8.0f;
+    public float boostSpeed = 30f;
+    private float maxSpeed = 8.0f;
+    private float speedX,speedZ;
+    public float acceleration = 0.2f;
     public float jumpForce = 3f;
     private float jumpCD = 0f;
     private float gravity = 750f;
@@ -24,11 +28,6 @@ public class MovementController : MonoBehaviour
     private bool space;
     public bool ledgeGrabbed;
 
-    private float moveFoward;
-    private float moveSideways;
-
-    int meter = MaskMeter.meter;
-
     // Start is called before the first frame update
     private void Start()
     {
@@ -38,35 +37,44 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
+        float dt = Time.deltaTime;
+
         isOnGround = CheckGround();
         if (isOnGround)
         {
             ledgeGrabbed = false;
             jumping = false;
         }
-        moveFoward = 0;
-        moveSideways = 0;
 
         if (!isBoosting && !ledgeGrabbed)
         {
             if (Input.GetKey(KeyCode.W))
             {
-                moveFoward = movementSpeed;
+                speedZ += (maxSpeed/0.2f)*dt;
             }
-            if (Input.GetKey(KeyCode.S))
+            else if (Input.GetKey(KeyCode.S))
             {
-                moveFoward = -movementSpeed;
+                speedZ += -(maxSpeed / 0.2f) * dt;
+            }
+            else
+            {
+                speedZ = 0f;
             }
 
             if (!sliding)
             {
                 if (Input.GetKey(KeyCode.A))
                 {
-                    moveSideways = -movementSpeed;
+                    speedX += -(maxSpeed / 0.2f) * dt;
                 }
-                if (Input.GetKey(KeyCode.D))
+                else if (Input.GetKey(KeyCode.D))
                 {
-                    moveSideways = movementSpeed;
+                    speedX += (maxSpeed / 0.2f) * dt;
+                }
+                else
+                {
+                    speedX = 0f;
                 }
             }
 
@@ -110,34 +118,36 @@ public class MovementController : MonoBehaviour
 
         if (Input.GetKey(KeyCode.Q) && MaskMeter.meter > 0)
         {
-            movementSpeed = 40f;
-            moveFoward = movementSpeed;
-
+            maxSpeed = boostSpeed;
             isBoosting = true;
             MaskMeter.meter -= 1;
         }
         else
         {
-            movementSpeed = 8.0f;
+            maxSpeed = walkSpeed;
             isBoosting = false;
         }
         
         if (jumpCD > 0)
         {
-            jumpCD = Mathf.Clamp(jumpCD - Time.deltaTime, 0, jumpCD);
+            jumpCD = Mathf.Clamp(jumpCD - dt, 0, jumpCD);
         }
        
 
         if (sliding)
         {
-            moveFoward = movementSpeed * 0.75f;
+            speedZ = maxSpeed * 0.75f;
             this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
         }
 
         if (!ledgeGrabbed)
         {
             rigidB.AddForce((-transform.up * gravity) * Time.deltaTime, ForceMode.Force);
-            rigidB.velocity = ((this.transform.forward * moveFoward) + (this.transform.right * moveSideways) + (this.transform.up * rigidB.velocity.y));
+
+            speedZ = Mathf.Clamp(speedZ, -maxSpeed, maxSpeed);
+            speedX = Mathf.Clamp(speedX,-maxSpeed, maxSpeed);
+
+            rigidB.velocity = ((this.transform.forward * speedZ) + (this.transform.right * speedX) + (this.transform.up * rigidB.velocity.y));
         }
     }
 

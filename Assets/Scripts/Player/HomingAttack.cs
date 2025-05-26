@@ -100,7 +100,7 @@ public class HomingAttack : MonoBehaviour
             Debug.Log("Doing for you");
             StartCoroutine(cameraShake.Shaking(.20f, .7f));
             Destroy(collision.gameObject);
-            rigidB.AddForce(transform.up * 5, ForceMode.Impulse);
+            rigidB.AddForce(transform.up * 8, ForceMode.Impulse);
             MaskMeter.meter += 5;
             attackTimeout = 1f;
             MovementController.jumping = true;
