@@ -18,7 +18,7 @@ public class EnemyHP : MonoBehaviour
         if (healthPoints == 0)
         {
             var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
-            killEnemy.removeEnemy(gameObject);
+            killEnemy.RemoveEnemy(gameObject);
             
             MaskMeter.meter = Mathf.Clamp(MaskMeter.meter+30,0,300);
             

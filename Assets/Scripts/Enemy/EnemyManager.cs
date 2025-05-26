@@ -12,17 +12,17 @@ public class EnemyManager : MonoBehaviour
     private List<GameObject> enemies = new List<GameObject>();
     void Start()
     {
-        foreach (GameObject badGuys in  GameObject.FindGameObjectsWithTag("Enemy")){
+        foreach (GameObject badGuys in GameObject.FindGameObjectsWithTag("Enemy")){
             enemies.Add(badGuys);
         };
     }
 
-    public void removeEnemy(GameObject enemy)
+    public void RemoveEnemy(GameObject enemy)
     {
         enemies.Remove(enemy);
     }
 
-    public GameObject getEnemy(GameObject player)
+    public GameObject GetEnemy(GameObject player)
     {
         float nearestEnemy = 9999;
         GameObject targetEnemy = null;

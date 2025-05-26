@@ -30,10 +30,19 @@ public class HomingAttack : MonoBehaviour
         crosshair.gameObject.SetActive(false);
     }
 
+    IEnumerator Invicible(bool boolean,float seconds)
+    {
+        if (seconds > 0) { 
+            yield return new WaitForSeconds(seconds);
+        }
+        homingAttack = boolean;
+        Debug.Log(homingAttack);
+    }
+
     void Update()
     {
         var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
-        GameObject targetEnemy = killEnemy.getEnemy(gameObject);
+        GameObject targetEnemy = killEnemy.GetEnemy(gameObject);
         
         bool showCrosshair = false;
         if (!MvController.isOnGround && targetEnemy != null)
@@ -68,7 +77,7 @@ public class HomingAttack : MonoBehaviour
 
         crosshair.gameObject.SetActive(showCrosshair);
 
-        if (homingAttack)
+        if (homingAttack && targetEnemy != null)
         {
             this.transform.position = Vector3.MoveTowards(transform.position, targetEnemy.transform.position, 20 * Time.deltaTime);
         }
@@ -88,14 +97,16 @@ public class HomingAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && homingAttack)
         {
-            homingAttack = false;
             Debug.Log("Doing for you");
             StartCoroutine(cameraShake.Shaking(.20f, .7f));
             Destroy(collision.gameObject);
-            rigidB.AddForce(transform.up * 15, ForceMode.Impulse);
+            rigidB.AddForce(transform.up * 5, ForceMode.Impulse);
             MaskMeter.meter += 5;
             attackTimeout = 1f;
             MovementController.jumping = true;
+
+            IEnumerator coroutine = Invicible(false, 0.3f);
+            StartCoroutine(coroutine);
         }
     }
 
