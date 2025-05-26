@@ -7,7 +7,7 @@ public class HermesAnimations : MonoBehaviour
     public MovementController playerMovement;
     public PlayerCombat playerCombat;
 
-    public GameObject rightArm;
+    public GameObject arms;
     public Animator anim;
 
     private bool hasLeftGround = false;
@@ -33,7 +33,7 @@ public class HermesAnimations : MonoBehaviour
             if (!hasLeftGround)
             {
                 hasLeftGround = true;
-                rightArm.SetActive(true);
+                arms.SetActive(true);
                 anim.SetBool("isJumping", true);
                 anim.SetBool("isFalling", false);
             }
@@ -52,7 +52,7 @@ public class HermesAnimations : MonoBehaviour
             if (hasLeftGround)
             {
                 hasLeftGround = false;
-                rightArm.SetActive(false);
+                arms.SetActive(false);
             }
 
             anim.SetBool("isJumping", false);
@@ -62,7 +62,7 @@ public class HermesAnimations : MonoBehaviour
         // Handle punching logic
         if (isPunching)
         {
-            rightArm.SetActive(true);
+            arms.SetActive(true);
             anim.SetBool("isPunching", true);
         }
         else
