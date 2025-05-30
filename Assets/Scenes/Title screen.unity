@@ -329,17 +329,17 @@ MonoBehaviour:
   m_GameObject: {fileID: 1831310614}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cc6fc6f054b1f504c8e5d3bf4f7af36b, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fed7c64312457a43849ee936b537204, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   option: 0
   optionTimeout: 0
-  start: {fileID: 1852094622}
-  exit: {fileID: 1961932059}
-  startGame: {fileID: 2800000, guid: ed880ebf4545f3542990bf8a37096cd3, type: 3}
-  startGameSelected: {fileID: 2800000, guid: c3c82446ee547604cae1881504260173, type: 3}
-  exitGame: {fileID: 2800000, guid: 83e443fb42fb4d94a9344e5cf582fdbf, type: 3}
-  exitGameSelected: {fileID: 2800000, guid: 2a7e6c704ece70641ae4d680dfb1a01b, type: 3}
+  start: {fileID: 0}
+  exit: {fileID: 0}
+  startGame: {fileID: 0}
+  startGameSelected: {fileID: 0}
+  exitGame: {fileID: 0}
+  exitGameSelected: {fileID: 0}
 --- !u!114 &1831310617
 MonoBehaviour:
   m_ObjectHideFlags: 0

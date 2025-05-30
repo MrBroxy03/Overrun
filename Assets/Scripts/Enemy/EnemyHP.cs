@@ -32,7 +32,7 @@ public class EnemyHP : MonoBehaviour
         } else {
             hitFlashcooldown = 0;
             if (mesh != null) {
-                mesh.material.color = Color.yellow;
+                mesh.material.color = Color.white;
             }
         }
         
