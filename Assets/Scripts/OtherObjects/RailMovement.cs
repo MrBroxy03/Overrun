@@ -10,7 +10,7 @@ public class RailMovement : MonoBehaviour
     public PlayerCombat playerCombat;
     public HomingAttack homingAttack;
     public SplineContainer spline;
-    private bool startMovement = false;
+    public bool startMovement = false;
     private float movementTimeout = 0f;
     private float railDuration = 0f;
     private float railTimer = 0f;
