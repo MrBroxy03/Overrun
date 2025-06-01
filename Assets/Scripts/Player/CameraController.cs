@@ -41,9 +41,12 @@ public class CameraController : MonoBehaviour
         }
         cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
         Camera.main.transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
-        if (movementController != null && !movementController.sliding)
+        if (movementController != null)
         {
-            player.Rotate(Vector3.up * inputX);
+            if (!movementController.sliding || movementController.speedZ < 4)
+            {
+                player.Rotate(Vector3.up * inputX);
+            }
         }
         cameraEffect();
     }
