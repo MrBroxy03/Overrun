@@ -5002,6 +5002,7 @@ MonoBehaviour:
   animHermes: {fileID: 2026999426}
   animEffect: {fileID: 1167818296}
   blackScreen: {fileID: 1167818295}
+  changeScene: 0
 --- !u!114 &1831310617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5598,7 +5599,7 @@ GameObject:
   - component: {fileID: 2134128158}
   - component: {fileID: 2134128157}
   m_Layer: 0
-  m_Name: Directional Light
+  m_Name: Sun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
