@@ -48,8 +48,6 @@ public class MovementController : MonoBehaviour
     }
     private float AccelerrationFunc(float speed,float desiredSpeed,float dt)
     {
-        Debug.Log(desiredSpeed);
-        Debug.Log(speed);
         if (speed != desiredSpeed) {
             if (Mathf.Abs(speed - desiredSpeed) < 1f)
             {

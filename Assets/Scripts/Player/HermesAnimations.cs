@@ -48,7 +48,7 @@ public class HermesAnimations : MonoBehaviour
                 {
                     arms.SetBool("isJumping", false);
                     arms.SetBool("isFalling", true);
-                    Debug.Log("I'm falling");
+                   
                 }
             }
             else
