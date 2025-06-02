@@ -24,31 +24,33 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
-        float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
+        if (!MenuSystem.paused) {
+            float inputX = Input.GetAxis("Mouse X") * mouseSensitivity;
+            float inputY = Input.GetAxis("Mouse Y") * mouseSensitivity;
 
-        cameraVerticalRotation -= inputY;
-        if (cameraVerticalRotation > maxYCameraRotation || cameraVerticalRotation < -maxYCameraRotation)
-        {
-            if (cameraVerticalRotation < 0f) 
+            cameraVerticalRotation -= inputY;
+            if (cameraVerticalRotation > maxYCameraRotation || cameraVerticalRotation < -maxYCameraRotation)
             {
-                cameraVerticalRotation = -maxYCameraRotation;
+                if (cameraVerticalRotation < 0f)
+                {
+                    cameraVerticalRotation = -maxYCameraRotation;
+                }
+                else
+                {
+                    cameraVerticalRotation = maxYCameraRotation;
+                }
             }
-            else
+            cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
+            Camera.main.transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
+            if (movementController != null)
             {
-                cameraVerticalRotation = maxYCameraRotation;
+                if (!movementController.sliding || movementController.speedZ < 4)
+                {
+                    player.Rotate(Vector3.up * inputX);
+                }
             }
+            cameraEffect();
         }
-        cameraVerticalRotation = Mathf.Clamp(cameraVerticalRotation, -90f, 90f);
-        Camera.main.transform.localEulerAngles = Vector3.right * cameraVerticalRotation;
-        if (movementController != null)
-        {
-            if (!movementController.sliding || movementController.speedZ < 4)
-            {
-                player.Rotate(Vector3.up * inputX);
-            }
-        }
-        cameraEffect();
     }
 
     void cameraEffect()

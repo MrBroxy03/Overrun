@@ -22,14 +22,17 @@ public class Grunt : MonoBehaviour
     private void Start()
     {
        enemyManager = FindAnyObjectByType<EnemyManager>();
-       enemy = new EnemyBehaviour(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);  
+       enemy = new EnemyBehaviour(this.gameObject,enemyManager.player_Transform, coneOfVisionRadius, spotDistance,attackRange);
 
-       currentWP = waypoints[0];
+        if (waypoints.Count > 0)
+        {
+            currentWP = waypoints[0];
+        }
     }
 
     private void Update()
     {
-        if (enemy != null)
+        if (enemy != null && !MenuSystem.paused)
         {
             enemyState = enemy.CanSeePlayer();
             if (enemyState == State.GoToPlayer)
@@ -37,7 +40,7 @@ public class Grunt : MonoBehaviour
                 enemyState = enemy.InRange();
                 enemy.LookAtPlayer();
                 enemy.GotoPlayer();
-            } else {
+            } else if(waypoints.Count > 0) {
                 if (Vector3.Distance(this.transform.position, currentWP.transform.position) < accuracy)
                 {
                     currentWPIndex++;
@@ -50,11 +53,13 @@ public class Grunt : MonoBehaviour
 
                 enemy.GotoPlace(currentWP.transform);
             }
+
+            if (spottedPlayerCooldown > 0)
+            {
+                spottedPlayerCooldown = Mathf.Clamp(spottedPlayerCooldown - Time.deltaTime, 0, spottedPlayerCooldown);
+            }
         }
 
-        if (spottedPlayerCooldown > 0)
-        {
-            spottedPlayerCooldown = Mathf.Clamp(spottedPlayerCooldown - Time.deltaTime, 0, spottedPlayerCooldown);
-        }
+        
     }
 }

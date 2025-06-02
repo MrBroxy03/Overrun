@@ -48,7 +48,7 @@ public class EnemyBehaviour
         {
             float cosAngle = Vector3.Dot(distance.normalized, this.npc.transform.forward);
             float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
-            if (angle <= visionRadius)
+            if (angle <= visionRadius || distance.magnitude < 3f)
             {
                 return State.GoToPlayer;
             }
@@ -79,21 +79,33 @@ public class EnemyBehaviour
 
     public void Stop()
     {
-        this.navMeshAgent.isStopped = true;
+        if (this.navMeshAgent.isActiveAndEnabled)
+        {
+            this.navMeshAgent.isStopped = true;
+        }
     }
     public void GotoPlace(Transform place)
     {
-        this.navMeshAgent.SetDestination(place.position);
+        if (this.navMeshAgent.isActiveAndEnabled)
+        {
+            this.navMeshAgent.SetDestination(place.position);
+        }
     }
     public void GotoPlayer()
     {
-        this.navMeshAgent.SetDestination(this.player.position);
+        if (this.navMeshAgent.isActiveAndEnabled)
+        {
+            this.navMeshAgent.SetDestination(this.player.position);
+        }
+       
     }
 
 
     public void LookAtPlayer()
     {
-        this.npc.transform.LookAt(this.player.transform.position);      
+      
+            this.npc.transform.LookAt(this.player.transform.position);
+        
     }
 
 }

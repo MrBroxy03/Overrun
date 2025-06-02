@@ -77,40 +77,45 @@ public class PlayerHealth : MonoBehaviour
     private bool pressingKey = false;
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.H) && !pressingKey)
+        if (!MenuSystem.paused)
         {
-            pressingKey = true;
-            godMode = !godMode;
-            if (godMode)
+            if (Input.GetKeyDown(KeyCode.H) && !pressingKey)
             {
-                health1Image.color = Color.yellow;
-                health2Image.color = Color.yellow;
-                health3Image.color = Color.yellow;
+                pressingKey = true;
+                godMode = !godMode;
+                if (godMode)
+                {
+                    health1Image.color = Color.yellow;
+                    health2Image.color = Color.yellow;
+                    health3Image.color = Color.yellow;
+                }
+                else
+                {
+                    health1Image.color = Color.red;
+                    health2Image.color = Color.red;
+                    health3Image.color = Color.red;
+                }
+            }
+            if (Input.GetKeyUp(KeyCode.H))
+            {
+                pressingKey = false;
+            }
+
+            if (health == 3 && hP1 != null)
+            {
+                hP3.SetActive(true);
+                hP2.SetActive(true);
+                hP1.SetActive(true);
+            }
+
+            if (hitCountdown > 0)
+            {
+                hitCountdown -= Time.deltaTime;
             }
             else
             {
-                health1Image.color = Color.red;
-                health2Image.color = Color.red;
-                health3Image.color = Color.red;
-            }   
-        }
-        if (Input.GetKeyUp(KeyCode.H))
-        {
-            pressingKey = false;
-        }
-
-        if (health == 3 && hP1 != null)
-        {
-            hP3.SetActive(true);
-            hP2.SetActive(true);
-            hP1.SetActive(true);
-        }
-
-        if (hitCountdown > 0)
-        {
-            hitCountdown -= Time.deltaTime;
-        } else {
-            hitCountdown = 0;
+                hitCountdown = 0;
+            }
         }
 
     }

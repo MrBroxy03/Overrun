@@ -82,7 +82,7 @@ public class RailMovement : MonoBehaviour
 
                 splineAnimate.Restart(true);
                 startMovement = true;
-                MaskMeter.meter = 150;
+                MaskMeter.meter = Mathf.Clamp(MaskMeter.meter+150,0, MaskMeter.maxMeter) ;
             }
         }
     }

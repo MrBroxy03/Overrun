@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -131,80 +132,82 @@ public class MovementController : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-
-        isOnGround = CheckGround();
-        if (isOnGround)
+        if (!MenuSystem.paused)
         {
-            ledgeGrabbed = false;
-            jumping = false;
-        }
-
-        if (Input.GetKey(KeyCode.W))
-        {
-            directionZ = 1;
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            directionZ = -1;
-        }
-        else
-        {
-            directionZ = 0;
-        }
-
-        if (Input.GetKey(KeyCode.D))
-        {
-            directionX = 1;
-        }
-        else if (Input.GetKey(KeyCode.A))
-        {
-            directionX = -1;
-        }
-        else
-        {
-            directionX = 0;
-        }
-           
-
-        if (Input.GetKey(KeyCode.Space))
-        {
-            sliding = false;
-            if (!isOnGround && !ledgeGrabbed)
+            isOnGround = CheckGround();
+            if (isOnGround)
             {
-                isOnGround = false;
-                LedgeGrab();
+                ledgeGrabbed = false;
+                jumping = false;
+            }
+
+            if (Input.GetKey(KeyCode.W))
+            {
+                directionZ = 1;
+            }
+            else if (Input.GetKey(KeyCode.S))
+            {
+                directionZ = -1;
             }
             else
             {
-                Jump();
+                directionZ = 0;
             }
-        }
-        
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            if (!jumping && isOnGround)
+            if (Input.GetKey(KeyCode.D))
             {
-                Jump();
+                directionX = 1;
             }
-        }
+            else if (Input.GetKey(KeyCode.A))
+            {
+                directionX = -1;
+            }
+            else
+            {
+                directionX = 0;
+            }
 
-        if (Input.GetKey(KeyCode.LeftControl) && isOnGround)
-        {
-            sliding = true;
 
-        }
-        else if (sliding)
-        {
-            Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.up), out RaycastHit upCheck, 1.5f);
-            if (upCheck.collider == null)
+            if (Input.GetKey(KeyCode.Space))
             {
                 sliding = false;
-                this.transform.localScale = Vector3.one;
+                if (!isOnGround && !ledgeGrabbed)
+                {
+                    isOnGround = false;
+                    LedgeGrab();
+                }
+                else
+                {
+                    Jump();
+                }
             }
-        }    
 
-        SpeedFunc();
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                if (!jumping && isOnGround)
+                {
+                    Jump();
+                }
+            }
+
+            if (Input.GetKey(KeyCode.LeftControl) && isOnGround)
+            {
+                sliding = true;
+
+            }
+            else if (sliding)
+            {
+                Physics.Raycast(this.transform.position, this.transform.TransformDirection(Vector3.up), out RaycastHit upCheck, 1.5f);
+                if (upCheck.collider == null)
+                {
+                    sliding = false;
+                    this.transform.localScale = Vector3.one;
+                }
+            }
+
+            SpeedFunc();
+        }
     }
 
     private IEnumerator DoLedgeGrab()

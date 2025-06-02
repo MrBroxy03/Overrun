@@ -43,52 +43,55 @@ public class PlayerCombat : MonoBehaviour
 
     private void Update()
     {
-        bool isOnGround = MvController.isOnGround;
+        if (!MenuSystem.paused)
+        {
+            bool isOnGround = MvController.isOnGround;
 
-        if (isOnGround && isGroundPound)
-        {
-            Destroy(gpHitbox);
-            gpHitbox = Instantiate(gpHitboxPrefab, this.transform.position, this.transform.rotation);
-            groundPoundAttack = 0.5f;
-            isGroundPound = false;
-            groundPound();  
-            StartCoroutine(cameraShake.Shaking(.20f, .1f));
-        }
+            if (isOnGround && isGroundPound)
+            {
+                Destroy(gpHitbox);
+                gpHitbox = Instantiate(gpHitboxPrefab, this.transform.position, this.transform.rotation);
+                groundPoundAttack = 0.5f;
+                isGroundPound = false;
+                groundPound();
+                StartCoroutine(cameraShake.Shaking(.20f, .1f));
+            }
 
-        if (Input.GetKey(KeyCode.Mouse0) && !isPunching && punchAttack == 0)
-        {
-            isPunching = true;
-            punchAttack = 0.5f;
-            punchHitbox = Instantiate(punchHitboxPrefab, this.transform.position, this.transform.rotation);
-        }
+            if (Input.GetKey(KeyCode.Mouse0) && !isPunching && punchAttack == 0)
+            {
+                isPunching = true;
+                punchAttack = 0.5f;
+                punchHitbox = Instantiate(punchHitboxPrefab, this.transform.position, this.transform.rotation);
+            }
 
-        if (punchAttack > 0)
-        {
-            punchAttack -= Time.deltaTime;
-        }
-        else if (punchAttack < 0)
-        {
-            isPunching = false;
-            Destroy(punchHitbox);
-            punchAttack = 0;
-        }
+            if (punchAttack > 0)
+            {
+                punchAttack -= Time.deltaTime;
+            }
+            else if (punchAttack < 0)
+            {
+                isPunching = false;
+                Destroy(punchHitbox);
+                punchAttack = 0;
+            }
 
-        if (Input.GetKey(KeyCode.Mouse1) && !isOnGround && !isGroundPound)
-        {
-            isGroundPound = true;
-            groundPound();
-            Destroy(gpHitbox);
-        }
+            if (Input.GetKey(KeyCode.Mouse1) && !isOnGround && !isGroundPound)
+            {
+                isGroundPound = true;
+                groundPound();
+                Destroy(gpHitbox);
+            }
 
-        if (groundPoundAttack > 0 && gpHitbox != null)
-        {
-            groundPoundAttack -= Time.deltaTime;
-            gpHitbox.transform.position = this.transform.position;
-        }
-        else if (groundPoundAttack < 0 && gpHitbox != null)
-        {
-            Destroy(gpHitbox);
-            groundPoundAttack = 0;
+            if (groundPoundAttack > 0 && gpHitbox != null)
+            {
+                groundPoundAttack -= Time.deltaTime;
+                gpHitbox.transform.position = this.transform.position;
+            }
+            else if (groundPoundAttack < 0 && gpHitbox != null)
+            {
+                Destroy(gpHitbox);
+                groundPoundAttack = 0;
+            }
         }
     }
 

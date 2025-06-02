@@ -41,55 +41,58 @@ public class HomingAttack : MonoBehaviour
 
     void Update()
     {
-        var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
-        GameObject targetEnemy = killEnemy.GetEnemy(gameObject);
+        if (!MenuSystem.paused) {
+            var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
+            GameObject targetEnemy = killEnemy.GetEnemy(gameObject);
         
-        bool showCrosshair = false;
-        if (!MvController.isOnGround && targetEnemy != null)
-        {
-            Vector3 enemyPosition = targetEnemy.transform.position;
-            Vector3 PlayerPosition = cam.transform.position;
-            Vector3 dir = (enemyPosition - PlayerPosition).normalized;
+            bool showCrosshair = false;
+            if (!MvController.isOnGround && targetEnemy != null)
+            {
+                Vector3 enemyPosition = targetEnemy.transform.position;
+                Vector3 PlayerPosition = cam.transform.position;
+                Vector3 dir = (enemyPosition - PlayerPosition).normalized;
 
-            float cosAngle = Vector3.Dot(dir, cam.transform.forward);
-            float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
+                float cosAngle = Vector3.Dot(dir, cam.transform.forward);
+                float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
 
           
-            if (angle <= 15 && enemyPosition.y+.5 < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
-            {
-                int distance = Convert.ToInt32(Math.Round((enemyPosition - PlayerPosition).magnitude)-1);
-                Physics.Raycast(PlayerPosition, dir, out RaycastHit hitInfo, distance);
-                if(hitInfo.collider == null)
+                if (angle <= 15 && enemyPosition.y+.5 < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
                 {
-                    showCrosshair = true;
-                    Vector3 screenPos = cam.WorldToScreenPoint(enemyPosition);
-                    crosshair.position = screenPos;
-
-                    if (Input.GetKey(KeyCode.Mouse0) && !homingAttack && MaskMeter.meter >= 70)
+                    int distance = Convert.ToInt32(Math.Round((enemyPosition - PlayerPosition).magnitude)-1);
+                    Physics.Raycast(PlayerPosition, dir, out RaycastHit hitInfo, distance);
+                    if(hitInfo.collider == null)
                     {
-                        homingAttack = true;
-                        MaskMeter.meter -= 70;
+                        showCrosshair = true;
+                        Vector3 screenPos = cam.WorldToScreenPoint(enemyPosition);
+                        crosshair.position = screenPos;
+
+                        if (Input.GetKey(KeyCode.Mouse0) && !homingAttack && MaskMeter.meter >= 70)
+                        {
+                            homingAttack = true;
+                            MaskMeter.meter -= 70;
+                        }
                     }
-                }
                 
+                }
             }
-        }
 
-        crosshair.gameObject.SetActive(showCrosshair);
+            crosshair.gameObject.SetActive(showCrosshair);
 
-        if (homingAttack && targetEnemy != null)
-        {
-            this.transform.position = Vector3.MoveTowards(transform.position, targetEnemy.transform.position, 20 * Time.deltaTime);
-        }
+            if (homingAttack && targetEnemy != null)
+            {
+                this.transform.position = Vector3.MoveTowards(transform.position, targetEnemy.transform.position, 20 * Time.deltaTime);
+            }
 
-        if (attackTimeout > 0)
-        {
-            attackTimeout -= Time.deltaTime;
-        } 
+            if (attackTimeout > 0)
+            {
+                attackTimeout -= Time.deltaTime;
+            } 
 
-        if (attackTimeout < 0)
-        {
-            attackTimeout = 0;
+            if (attackTimeout < 0)
+            {
+                attackTimeout = 0;
+            }
+            
         }
     }
 
