@@ -18,7 +18,7 @@ public class Gunman : MonoBehaviour
     private void Start()
     {
         enemyManager = FindAnyObjectByType<EnemyManager>();
-
+        animGun.Play("isIdle", 0, 0f);
         enemy = new EnemyBehaviour(this.gameObject, enemyManager.player_Transform, coneOfVisionRadius, spotDistance, attackRange);
         GetAnim();
     }
@@ -38,7 +38,7 @@ public class Gunman : MonoBehaviour
                 {
                     animEnemy.SetBool("isIdle", false);
                     animEnemy.SetBool("isSpot", false);
-                    //animGun.SetBool("isIdle", false);
+                    animGun.SetBool("isIdle", false);
                     animGun.SetBool("isSpot", false);
                     ShootBullet();
                 } else 
@@ -55,7 +55,6 @@ public class Gunman : MonoBehaviour
                 animGun.SetBool("isIdle", true);
             }
         }
-        animGun.SetBool("isIdle", true);
  
         if (shootCooldown > 0)
         {

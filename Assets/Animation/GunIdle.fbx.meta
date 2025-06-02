@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d601590893f18df41a7321abf3800071
+guid: e31f1a514cda4b4449180d4d05026271
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -33,11 +33,13 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|Armature|mixamo.com|Layer0
-      takeName: Armature|Armature|mixamo.com|Layer0
-      internalID: -4791504522942941401
-      firstFrame: 30
-      lastFrame: 49
+      name: "ko\u0144c\xF3wka lufy|ko\u0144c\xF3wka lufy|ko\u0144c\xF3wka lufy|ko\u0144c\xF3wka
+        lufyAction"
+      takeName: "ko\u0144c\xF3wka lufy|ko\u0144c\xF3wka lufy|ko\u0144c\xF3wka lufy|ko\u0144c\xF3wka
+        lufyAction"
+      internalID: -4869372093634715205
+      firstFrame: 0
+      lastFrame: 99
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
