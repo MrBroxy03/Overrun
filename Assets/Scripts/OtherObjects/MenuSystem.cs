@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class MenuSystem : MonoBehaviour
 {
@@ -36,6 +38,7 @@ public class MenuSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.None;
         pauseUI.SetActive(true);
         Time.timeScale = 0f;
+        paused = true;
     }
     public void UnpauseFunc()
     {
@@ -43,6 +46,7 @@ public class MenuSystem : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         pauseUI.SetActive(false);
         Time.timeScale = 1f;
+        paused = false;
     }
 
     // Update is called once per frame
@@ -50,15 +54,22 @@ public class MenuSystem : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Tab))
         {
-            paused = !paused;
-            if (paused)
+            if (settingsUI.activeSelf)
             {
-                PauseFunc();
+                OpenSettings(false);
             }
             else
             {
-                UnpauseFunc();
+                if (paused)
+                {
+                    UnpauseFunc();
+                }
+                else
+                {
+                    PauseFunc();
+                }
             }
+           
         }
     }
 }
