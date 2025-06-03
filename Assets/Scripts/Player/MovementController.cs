@@ -94,7 +94,11 @@ public class MovementController : MonoBehaviour
             isBoosting = true;
             MaskMeter.meter -= 1;
         }
-        else if (sliding)
+        else
+        {
+            isBoosting = false;
+        }
+        if (sliding)
         {
             this.transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
             if (speedX > crouchwalkSpeed || speedZ > crouchwalkSpeed)
