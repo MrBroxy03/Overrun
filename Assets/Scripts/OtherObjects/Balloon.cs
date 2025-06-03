@@ -19,7 +19,6 @@ public class Balloon : MonoBehaviour
         if (BalloonsCollider != null && collision.gameObject.CompareTag("Player") && rb != null)
         {
             rb.AddForce((transform.up * JumpForce), ForceMode.Impulse);
-            Destroy(this.gameObject);
         }
     }
    

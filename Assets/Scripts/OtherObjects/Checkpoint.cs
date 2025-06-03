@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Checkpoint : MonoBehaviour
 {
+    public Animator anim;
 
     private int currentCheckpoint = 0;
     [SerializeField] public GameObject[] checkpoints;
@@ -13,11 +14,18 @@ public class Checkpoint : MonoBehaviour
     {
         currentCheckpoint = 0;
         this.transform.position = checkpoints[0].transform.position;
+
+        if (anim == null)
+        {
+            anim = GetComponent<Animator>();
+        }
+
     }
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Checkpoint") && collision.gameObject.GetComponent<Collider>().enabled)
         {
+            anim.SetBool("spins", true);
             collision.gameObject.GetComponent<Collider>().enabled = false;
             currentCheckpoint = Mathf.Clamp(currentCheckpoint+1,currentCheckpoint, checkpoints.Length-1);
         }
@@ -27,7 +35,6 @@ public class Checkpoint : MonoBehaviour
     {
         if (PlayerHealth.health == 0)
         {
-            Debug.Log("Bro was defeated");
             this.transform.position = checkpoints[currentCheckpoint].transform.position;
             PlayerHealth.health = 3;
         }

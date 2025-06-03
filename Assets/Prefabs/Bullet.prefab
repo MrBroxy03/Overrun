@@ -10,19 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 70
+      value: 4.5866
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalScale.z
-      value: 15
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.002402
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalPosition.y
@@ -134,11 +134,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 0.16898
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 0.77982
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalScale.z
@@ -146,11 +146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 0.038961
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 0.028812
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -200,8 +200,58 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 4743956504160699562}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 4064227b46e92484eb49998514fced1f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1706413843587454684}
   m_SourcePrefab: {fileID: 100100000, guid: 4064227b46e92484eb49998514fced1f, type: 3}
+--- !u!1 &8589341705358213320 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 4064227b46e92484eb49998514fced1f, type: 3}
+  m_PrefabInstance: {fileID: 8931219789538278809}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &1706413843587454684
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8589341705358213320}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!4 &8969103828056234610 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4064227b46e92484eb49998514fced1f, type: 3}
