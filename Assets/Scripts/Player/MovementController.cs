@@ -113,11 +113,23 @@ public class MovementController : MonoBehaviour
             isBoosting = false;
         }
 
+       
         desiredSpeedZ *= directionZ;
         desiredSpeedX *= directionX;
 
+        
         speedZ = AccelerrationFunc(speedZ,desiredSpeedZ,dt);
         speedX = AccelerrationFunc(speedX,desiredSpeedX,dt);
+
+
+        Debug.DrawRay(this.transform.position, (this.transform.forward * directionZ) + (this.transform.right * directionX) * 0.8f, Color.blue);
+        Physics.Raycast(this.transform.position, (this.transform.forward * directionZ) + (this.transform.right * directionX), out RaycastHit check, 0.8f);
+        if (check.collider != null)
+        {
+            speedZ = 0;
+            speedX = 0;
+        }
+
 
 
         if (!ledgeGrabbed)
@@ -240,7 +252,7 @@ public class MovementController : MonoBehaviour
 
     private bool CheckGround()
     {
-        Debug.DrawRay(this.transform.position, -this.transform.TransformDirection(Vector3.up) * 1.05f, Color.red);
+      
         Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1.05f);
         if (bodyCheck2.collider != null && !bodyCheck2.collider.gameObject.CompareTag("Enemy")) {
             return true;

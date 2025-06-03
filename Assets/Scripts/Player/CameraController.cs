@@ -15,6 +15,7 @@ public class CameraController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        cam.farClipPlane = Settings.cameraDistance;
         cam.fieldOfView = 60.0f;
         movementController = GetComponent<MovementController>();
         Cursor.visible = false;
@@ -50,6 +51,9 @@ public class CameraController : MonoBehaviour
                 }
             }
             cameraEffect();
+        }
+        if (cam.farClipPlane != Settings.cameraDistance) {
+            cam.farClipPlane = Settings.cameraDistance;
         }
     }
 
