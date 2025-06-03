@@ -22,7 +22,7 @@ public enum PatrolType
 public class EnemyBehaviour
 {
     protected GameObject npc;
-    protected Transform player;
+    public Transform player;
     protected float visionRadius;
     protected float visionRange;
     protected float attackRange;
@@ -48,7 +48,7 @@ public class EnemyBehaviour
         {
             float cosAngle = Vector3.Dot(distance.normalized, this.npc.transform.forward);
             float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
-            if (angle <= visionRadius || distance.magnitude < 3f)
+            if (angle <= visionRadius || distance.magnitude < 5f)
             {
                 return State.GoToPlayer;
             }
@@ -103,8 +103,11 @@ public class EnemyBehaviour
 
     public void LookAtPlayer()
     {
-      
-            this.npc.transform.LookAt(this.player.transform.position);
+        Vector3 direction = this.player.position - this.npc.transform.position;
+
+        direction.y = 0;
+        
+        this.npc.transform.rotation = Quaternion.LookRotation(direction);
         
     }
 

@@ -173,7 +173,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spotDistance: 10
   shootCooldown: 0
-  coneOfVisionRadius: 45
+  coneOfVisionRadius: 60
   attackRange: 10
   animEnemy: {fileID: 0}
   animGun: {fileID: 0}

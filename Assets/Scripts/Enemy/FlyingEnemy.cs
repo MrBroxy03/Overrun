@@ -65,8 +65,9 @@ public class FlyingEnemy : MonoBehaviour
     {
         if (shootCooldown == 0f)
         {
+            Vector3 direction = this.transform.position - enemy.player.position;
             shootCooldown = 2;
-            Instantiate(enemyManager.bullet, this.transform.position, this.transform.rotation);
+            Instantiate(enemyManager.bullet, this.transform.position, Quaternion.FromToRotation(-Vector3.forward, direction));
         }
     }
 }
