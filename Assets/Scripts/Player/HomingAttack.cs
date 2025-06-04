@@ -61,12 +61,12 @@ public class HomingAttack : MonoBehaviour
                 {
                     int distance = Convert.ToInt32(Math.Round((enemyPosition - PlayerPosition).magnitude)-1);
                     Physics.Raycast(PlayerPosition, dir, out RaycastHit hitInfo, distance);
-                    if(hitInfo.collider == null)
+
+                    if(hitInfo.collider == null || hitInfo.collider.gameObject == targetEnemy)
                     {
                         showCrosshair = true;
                         Vector3 screenPos = cam.WorldToScreenPoint(enemyPosition);
                         crosshair.position = screenPos;
-
                         if (Input.GetKey(KeyCode.Mouse0) && !homingAttack && MaskMeter.meter >= 70)
                         {
                             homingAttack = true;

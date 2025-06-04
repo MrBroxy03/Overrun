@@ -58,11 +58,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71c1514a6bd24e1e882cebbe1904ce04, type: 3}
-  m_Name: ethnocentric rg SDF
+  m_Name: ethnocentric_MoreBold
   m_EditorClassIdentifier: 
-  hashCode: -927127336
+  hashCode: -120030797
   material: {fileID: 2756011797430057148}
-  materialHashCode: -1648429576
+  materialHashCode: -123015245
   m_Version: 1.1.0
   m_SourceFontFileGUID: be3b2c99467d6724085356fcd0390764
   m_SourceFontFile_EditorRef: {fileID: 12800000, guid: be3b2c99467d6724085356fcd0390764, type: 3}
@@ -1249,7 +1249,7 @@ MonoBehaviour:
   fontWeights: []
   normalStyle: 0
   normalSpacingOffset: 0
-  boldStyle: 1.98
+  boldStyle: 1.38
   boldSpacing: 7
   italicStyle: 35
   tabSize: 10
@@ -1323,12 +1323,12 @@ Material:
     - _OutlineSoftness: 0
     - _OutlineUVSpeedX: 0
     - _OutlineUVSpeedY: 0
-    - _OutlineWidth: 0.409
+    - _OutlineWidth: 0.65
     - _PerspectiveFilter: 0.875
     - _Reflectivity: 10
     - _ScaleRatioA: 0.9
-    - _ScaleRatioB: 0.45450002
-    - _ScaleRatioC: 0.45450002
+    - _ScaleRatioB: 0.5895
+    - _ScaleRatioC: 0.5895
     - _ScaleX: 1
     - _ScaleY: 1
     - _ShaderFlags: 0
@@ -1347,7 +1347,7 @@ Material:
     - _UnderlaySoftness: 0
     - _VertexOffsetX: 0
     - _VertexOffsetY: 0
-    - _WeightBold: 1.98
+    - _WeightBold: 1.38
     - _WeightNormal: 0
     m_Colors:
     - _ClipRect: {r: -32767, g: -32767, b: 32767, a: 32767}
