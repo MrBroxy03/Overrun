@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyHP : MonoBehaviour
 {
+    public GameObject explosion;
     public float healthPoints = 3;
     private float hitFlashcooldown = 0f;
     private MeshRenderer mesh;
@@ -15,13 +16,13 @@ public class EnemyHP : MonoBehaviour
 
     void Update()
     {
-        if (healthPoints == 0)
+        if (healthPoints <= 0)
         {
+            Instantiate(explosion, this.transform.position, this.transform.rotation);
             var killEnemy = GameObject.FindGameObjectWithTag("Manager").GetComponent<EnemyManager>();
             killEnemy.RemoveEnemy(gameObject);
             
             MaskMeter.meter = Mathf.Clamp(MaskMeter.meter+30,0,300);
-            
             Destroy(gameObject);   
         }
 
@@ -35,7 +36,6 @@ public class EnemyHP : MonoBehaviour
                 mesh.material.color = Color.white;
             }
         }
-        
     }
 
     private void OnTriggerEnter(Collider collision)

@@ -15,6 +15,7 @@ public class HomingAttack : MonoBehaviour
     public float homingAttackRange = 50f;
     private float attackTimeout = 0f;
     private Rigidbody rigidB;
+    public GameObject explosion;
 
     public CameraShake cameraShake;
     public RectTransform crosshair;
@@ -56,7 +57,7 @@ public class HomingAttack : MonoBehaviour
                 float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
 
           
-                if (angle <= 15 && enemyPosition.y < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
+                if (angle <= 15 && enemyPosition.y+.5 < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
                 {
                     int distance = Convert.ToInt32(Math.Round((enemyPosition - PlayerPosition).magnitude)-1);
                     Physics.Raycast(PlayerPosition, dir, out RaycastHit hitInfo, distance);
@@ -100,8 +101,8 @@ public class HomingAttack : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Enemy") && homingAttack)
         {
-            Debug.Log("Doing for you");
             StartCoroutine(cameraShake.Shaking(.20f, .7f));
+            Instantiate(explosion, collision.gameObject.transform.position, collision.gameObject.transform.rotation);
             Destroy(collision.gameObject);
             rigidB.AddForce(transform.up * 8, ForceMode.Impulse);
             MaskMeter.meter += 5;

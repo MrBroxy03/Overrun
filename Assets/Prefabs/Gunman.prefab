@@ -66,6 +66,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeea894c8edc7af4abcdf69b34099ef0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  explosion: {fileID: 7533460948272647258, guid: e65b735eff171a24399628ebf6c68aea, type: 3}
   healthPoints: 2
 --- !u!65 &8237441228237025701
 BoxCollider:

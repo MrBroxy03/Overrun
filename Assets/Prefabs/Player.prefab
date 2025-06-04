@@ -403,6 +403,8 @@ MonoBehaviour:
   meter: 0
   jumping: 0
   homingAttack: 0
+  homingAttackRange: 50
+  explosion: {fileID: 7533460948272647258, guid: e65b735eff171a24399628ebf6c68aea, type: 3}
   cameraShake: {fileID: 8447519074517089952}
   crosshair: {fileID: 0}
   cam: {fileID: 7005771359466360817}
@@ -431,12 +433,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eec6a9a7638d2f340af5caba737cedda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 8
+  walkSpeed: 8
+  crouchwalkSpeed: 3
+  boostSpeed: 30
+  speedX: 0
+  speedZ: 0
+  walkacceleration: 0.2
+  boostacceleration: 0.75
+  slidedeacceleration: 3
+  crouchacceleration: 0.4
   jumpForce: 3
   sliding: 0
   isOnGround: 1
   isBoosting: 0
-  LedgeVerticalPower: 3
   rigidB: {fileID: 330757782027517549}
   rail: {fileID: 0}
   ledgeGrabbed: 0
@@ -452,6 +461,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52cb8d1bc08a7448a7733e44e89e32f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isPunching: 0
   canPunch: 0
   punchTimer: 0
   punchAttack: 0
@@ -515,6 +525,7 @@ MonoBehaviour:
   playerCombat: {fileID: 2981594509702177596}
   homingAttack: {fileID: 3818301068311212964}
   spline: {fileID: 0}
+  startMovement: 0
 --- !u!114 &3163139500986976361
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -527,6 +538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00fd9d230655f0b42be950cec147a1fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  anim: {fileID: 0}
   checkpoints: []
 --- !u!1 &6028530782799796390
 GameObject:
