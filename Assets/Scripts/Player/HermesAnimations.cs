@@ -12,6 +12,9 @@ public class HermesAnimations : MonoBehaviour
     public Animator arms;
 
     private bool hasLeftGround = false;
+    private bool isDoingGP = false;
+    private bool hasGroundPounded = false;
+
 
     void Start()
     {
@@ -24,7 +27,9 @@ public class HermesAnimations : MonoBehaviour
     void Update()
     {
         bool isOnGround = playerMovement.isOnGround;
+        bool ledgeGrab = playerMovement.ledgeGrabbed;
         bool isPunching = playerCombat.isPunching;
+        bool isGP = playerCombat.isGroundPound;
         bool isGrinding = railMovement.startMovement;
 
         AnimatorStateInfo stateInfo = arms.GetCurrentAnimatorStateInfo(0);
@@ -33,6 +38,17 @@ public class HermesAnimations : MonoBehaviour
         {
             arms.SetBool("isStartRail", false);
             arms.SetBool("isRailIdle", false);
+
+            if (ledgeGrab)
+            {
+                arms.SetBool("isLedgeGrabbing", true);
+            }
+
+            if (stateInfo.IsName("LedgeGrab") && stateInfo.normalizedTime > 0.7f) 
+            {
+                arms.SetBool("isLedgeGrabbing", false);
+            }
+
             if (!isOnGround)
             {
                 if (!hasLeftGround)
@@ -42,26 +58,46 @@ public class HermesAnimations : MonoBehaviour
                     arm.SetActive(true);
                     arms.SetBool("isJumping", true);
                     arms.SetBool("isFalling", false);
+
+                    isDoingGP = false;
+                    hasGroundPounded = false;
                 }
 
-                if (stateInfo.IsName("Jump") && stateInfo.normalizedTime >= 0.4f)
+                if (stateInfo.IsName("Jump") && stateInfo.normalizedTime >= 0.4f && !ledgeGrab)
                 {
                     arms.SetBool("isJumping", false);
                     arms.SetBool("isFalling", true);
-                   
+                }
+
+                if (isGP && !isDoingGP)
+                {
+                    isDoingGP = true;
+                    arms.SetBool("startGP", true);
                 }
             }
             else
             {
+                if (isDoingGP && !hasGroundPounded)
+                {
+                    arms.SetBool("startGP", false);
+                    arms.SetBool("attackGP", true);
+                    hasGroundPounded = true;
+                }
+
                 if (hasLeftGround)
                 {
                     hasLeftGround = false;
-
-                    arm.SetActive(false);
                 }
 
                 arms.SetBool("isJumping", false);
                 arms.SetBool("isFalling", false);
+
+                if (arms.GetCurrentAnimatorStateInfo(0).IsName("GroundPoundAttack") && stateInfo.normalizedTime >= 0.35f)
+                {
+                    arms.SetBool("attackGP", false);
+                    isDoingGP = false;
+                    hasGroundPounded = false;
+                }
             }
 
             if (isPunching)
@@ -73,7 +109,7 @@ public class HermesAnimations : MonoBehaviour
             {
                 arms.SetBool("isPunching", false);
             }
-        } 
+        }
         else 
         {
             arms.SetBool("isJumping", false);
@@ -89,6 +125,16 @@ public class HermesAnimations : MonoBehaviour
                 arms.SetBool("isStartRail", false);
                 arms.SetBool("isRailIdle", true);
             }
+        }
+
+        bool noAnims = stateInfo.IsName("Idle") && !arms.GetBool("isJumping") &&
+        !arms.GetBool("isFalling") && !arms.GetBool("startGP") &&
+        !arms.GetBool("attackGP") && !arms.GetBool("isPunching") &&
+        !arms.GetBool("isStartRail") && !arms.GetBool("isRailIdle");
+
+        if (noAnims)
+        {
+            arm.SetActive(false);
         }
     }
 
