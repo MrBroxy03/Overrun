@@ -56,7 +56,7 @@ public class HomingAttack : MonoBehaviour
                 float angle = Mathf.Acos(cosAngle) * Mathf.Rad2Deg;
 
           
-                if (angle <= 15 && enemyPosition.y+.5 < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
+                if (angle <= 15 && enemyPosition.y < PlayerPosition.y && (enemyPosition - PlayerPosition).magnitude < homingAttackRange && MaskMeter.meter != 0 && attackTimeout == 0 )
                 {
                     int distance = Convert.ToInt32(Math.Round((enemyPosition - PlayerPosition).magnitude)-1);
                     Physics.Raycast(PlayerPosition, dir, out RaycastHit hitInfo, distance);
