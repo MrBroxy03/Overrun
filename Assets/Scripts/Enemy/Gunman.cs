@@ -36,9 +36,12 @@ public class Gunman : MonoBehaviour
                 enemy.LookAtPlayer();
                 
                 if (shootCooldown == 0f)
-                {
+                {   
+                    animEnemy.SetBool("isShooting", true);
                     animEnemy.SetBool("isIdle", false);
                     animEnemy.SetBool("isSpot", false);
+
+                    animGun.SetBool("isShooting", true);
                     animGun.SetBool("isIdle", false);
                     animGun.SetBool("isSpot", false);
                     ShootBullet();
@@ -46,6 +49,7 @@ public class Gunman : MonoBehaviour
                 {
                     animEnemy.SetBool("isSpot", true);
                     animEnemy.SetBool("isShooting", false);
+
                     animGun.SetBool("isSpot", true);
                     animGun.SetBool("isShooting", false);
                 }
@@ -53,6 +57,7 @@ public class Gunman : MonoBehaviour
             } else 
             {
                 animEnemy.SetBool("isIdle", true);
+                
                 animGun.SetBool("isIdle", true);
             }
         }
