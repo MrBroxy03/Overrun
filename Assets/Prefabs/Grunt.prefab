@@ -274,6 +274,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 7533460948272647258, guid: e65b735eff171a24399628ebf6c68aea, type: 3}
   healthPoints: 3
+  hurtColor: {r: 1, g: 0, b: 0, a: 1}
+  flashduration: 0.2
+  render:
+  - {fileID: 0}
+  explosionSound: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
 --- !u!114 &2391432727328846270
 MonoBehaviour:
   m_ObjectHideFlags: 0

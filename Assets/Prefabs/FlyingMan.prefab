@@ -73,6 +73,7 @@ MonoBehaviour:
   spotDistance: 10
   coneOfVisionRadius: 45
   attackRange: 7
+  shootingSound: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
 --- !u!114 &283323796980050930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,6 +88,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   explosion: {fileID: 7533460948272647258, guid: e65b735eff171a24399628ebf6c68aea, type: 3}
   healthPoints: 1
+  hurtColor: {r: 1, g: 0, b: 0, a: 1}
+  flashduration: 0.2
+  render: []
+  explosionSound: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
 --- !u!135 &3410882729210325629
 SphereCollider:
   m_ObjectHideFlags: 0

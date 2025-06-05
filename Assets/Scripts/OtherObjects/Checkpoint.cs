@@ -10,6 +10,7 @@ public class Checkpoint : MonoBehaviour
     [SerializeField] public GameObject[] checkpoints;
     int health = PlayerHealth.health;
 
+    public AudioClip checkpointSound;
     void Start()
     {
         currentCheckpoint = 0;
@@ -25,6 +26,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Checkpoint") && collision.gameObject.GetComponent<Collider>().enabled)
         {
+            SoundEffects.instance.PlaySFXClip(checkpointSound, this.transform);
             anim.SetBool("spins", true);
             collision.gameObject.GetComponent<Collider>().enabled = false;
             currentCheckpoint = Mathf.Clamp(currentCheckpoint+1,currentCheckpoint, checkpoints.Length-1);

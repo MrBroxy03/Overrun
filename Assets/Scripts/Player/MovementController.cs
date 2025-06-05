@@ -42,6 +42,9 @@ public class MovementController : MonoBehaviour
 
     public bool ledgeGrabbed;
 
+
+    public AudioClip jumpSound;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -257,7 +260,7 @@ public class MovementController : MonoBehaviour
 
     private bool CheckGround()
     {
-      
+        
         Physics.Raycast(this.transform.position, -this.transform.TransformDirection(Vector3.up), out RaycastHit bodyCheck2, 1.05f);
         if (bodyCheck2.collider != null && !bodyCheck2.collider.gameObject.CompareTag("Enemy")) {
             return true;
@@ -270,7 +273,7 @@ public class MovementController : MonoBehaviour
         if (!ledgeGrabbed && jumpCD == 0)
         {
             jumping = true;
-            
+            SoundEffects.instance.PlaySFXClip(jumpSound, this.transform);
             rigidB.AddForce(transform.up * jumpForce, ForceMode.Impulse);
             jumpCD = 0.2f;
         }

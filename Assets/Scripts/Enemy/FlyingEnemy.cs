@@ -12,6 +12,7 @@ public class FlyingEnemy : MonoBehaviour
     public float coneOfVisionRadius = 45f;
     public float attackRange = 7f;
 
+    public AudioClip shootingSound;
     State enemyState = State.Idle;
     private void Start()
     {
@@ -65,6 +66,7 @@ public class FlyingEnemy : MonoBehaviour
     {
         if (shootCooldown == 0f)
         {
+            SoundEffects.instance.PlaySFXClip(shootingSound, this.transform);
             Vector3 direction = this.transform.position - enemy.player.position;
             shootCooldown = 2;
             Instantiate(enemyManager.bullet, this.transform.position, Quaternion.FromToRotation(-Vector3.forward, direction));

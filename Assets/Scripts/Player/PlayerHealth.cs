@@ -24,6 +24,9 @@ public class PlayerHealth : MonoBehaviour
     private Image health1Image;
     private Image health2Image;
     private Image health3Image;
+
+    public AudioClip hurtSound;
+
     private void Start()
     {
         health1Image = hP1.GetComponent<Image>();
@@ -40,6 +43,7 @@ public class PlayerHealth : MonoBehaviour
         {
             if (collision.gameObject.CompareTag("Enemy") && hitCountdown == 0 && !godMode)
             {
+                SoundEffects.instance.PlaySFXClip(hurtSound,transform);
                 health = health - 1;
                 hitCountdown = 1f;
                 StartCoroutine(cameraShake.Shaking(.50f, .15f));

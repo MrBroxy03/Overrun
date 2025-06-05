@@ -3294,6 +3294,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2080749402}
     m_Modifications:
+    - target: {fileID: 283323796980050930, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1951497021}
     - target: {fileID: 1576852095988057114, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
       propertyPath: m_Name
       value: FlyingMan
@@ -3463,6 +3467,11 @@ Transform:
   - {fileID: 343500492}
   m_Father: {fileID: 387581329}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!137 &170676525 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5670182308225669998, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+  m_PrefabInstance: {fileID: 1885266643}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &172000126
 GameObject:
   m_ObjectHideFlags: 0
@@ -4642,6 +4651,7 @@ GameObject:
   - component: {fileID: 240236152}
   - component: {fileID: 240236153}
   - component: {fileID: 240236154}
+  - component: {fileID: 240236155}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Manager
@@ -4692,6 +4702,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseUI: {fileID: 1133157213}
   settingsUI: {fileID: 617739021}
+--- !u!114 &240236155
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240236150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afa4287fe4e2194fbe4fd01a967dc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxObject: {fileID: 6402587037531312648, guid: 0d57e6071fd63e64a89cb053d352e1ec, type: 3}
 --- !u!1001 &242477438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7721,6 +7744,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 437073310}
   m_CullTransparentMesh: 1
+--- !u!137 &453245611 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5670182308225669998, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+  m_PrefabInstance: {fileID: 2093033380}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &455735775
 GameObject:
   m_ObjectHideFlags: 0
@@ -11485,6 +11513,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.021809552, y: 0.02908142, z: 0.10896655}
   m_Center: {x: 0, y: 0, z: 0.042905267}
+--- !u!137 &728455672 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5670182308225669998, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+  m_PrefabInstance: {fileID: 1437357969}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &731090406
 GameObject:
   m_ObjectHideFlags: 0
@@ -20227,6 +20260,10 @@ PrefabInstance:
       propertyPath: mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 283323796980050930, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1951497021}
     - target: {fileID: 1576852095988057114, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
       propertyPath: m_Name
       value: FlyingMan (2)
@@ -20742,6 +20779,10 @@ PrefabInstance:
       propertyPath: mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 283323796980050930, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1951497021}
     - target: {fileID: 1576852095988057114, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
       propertyPath: m_Name
       value: FlyingMan (3)
@@ -21343,6 +21384,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt
       objectReference: {fileID: 0}
+    - target: {fileID: 5533521078412951981, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 728455672}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -22304,6 +22349,11 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.021809552, y: 0.02908142, z: 0.10896655}
   m_Center: {x: 0, y: 0, z: 0.042905267}
+--- !u!137 &1491611314 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5670182308225669998, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+  m_PrefabInstance: {fileID: 1889830575}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1492934474
 GameObject:
   m_ObjectHideFlags: 0
@@ -23035,6 +23085,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2080749402}
     m_Modifications:
+    - target: {fileID: 283323796980050930, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1951497021}
     - target: {fileID: 1576852095988057114, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
       propertyPath: m_Name
       value: FlyingMan
@@ -25918,6 +25972,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 66ba05c50fd93704e86a72429fb2f998, type: 3}
   m_PrefabInstance: {fileID: 1047968102}
   m_PrefabAsset: {fileID: 0}
+--- !u!137 &1866282782 stripped
+SkinnedMeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5670182308225669998, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+  m_PrefabInstance: {fileID: 1868089681}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1867549403
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26173,6 +26232,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5533521078412951981, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1866282782}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -26355,6 +26418,10 @@ PrefabInstance:
       propertyPath: waypoints.Array.data[4]
       value: 
       objectReference: {fileID: 1819477688}
+    - target: {fileID: 5533521078412951981, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 170676525}
     - target: {fileID: 8470463725890733966, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
       propertyPath: m_Name
       value: Grunt
@@ -26605,6 +26672,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 5533521078412951981, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1491611314}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -27671,6 +27742,11 @@ PrefabInstance:
       addedObject: {fileID: 1543963718}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d4bbde49582d0a48ade1ed058bbad71, type: 3}
+--- !u!23 &1951497021 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2155116471908931625, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
+  m_PrefabInstance: {fileID: 1293520820}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1955346890 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f84741fcee449374facc6598f003c2f4, type: 3}
@@ -29010,6 +29086,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2080749402}
     m_Modifications:
+    - target: {fileID: 283323796980050930, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 1951497021}
     - target: {fileID: 1576852095988057114, guid: b35a745a476ddd54898fa354d3187a89, type: 3}
       propertyPath: m_Name
       value: FlyingMan (1)
@@ -29590,6 +29670,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Grunt
       objectReference: {fileID: 0}
+    - target: {fileID: 5533521078412951981, guid: 010e24e3952f35c4da15544f115d70bc, type: 3}
+      propertyPath: render
+      value: 
+      objectReference: {fileID: 453245611}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -31065,6 +31149,10 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 189410096202996377, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+      propertyPath: jumpSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+    - target: {fileID: 189410096202996377, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: boostSpeed
       value: 23
       objectReference: {fileID: 0}
@@ -31176,10 +31264,22 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 2981594509702177596, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+      propertyPath: punchSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+    - target: {fileID: 2981594509702177596, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+      propertyPath: groundPoundSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
     - target: {fileID: 3163139500986976361, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 6669933010399360083}
+    - target: {fileID: 3163139500986976361, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+      propertyPath: checkpointSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
     - target: {fileID: 3163139500986976361, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: checkpoints.Array.size
       value: 2
@@ -31272,6 +31372,10 @@ PrefabInstance:
       propertyPath: hP3
       value: 
       objectReference: {fileID: 998151225}
+    - target: {fileID: 5364766394738882777, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+      propertyPath: hurtSound
+      value: 
+      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
     - target: {fileID: 5533501250059715839, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: HP1
       value: 
@@ -31340,6 +31444,7 @@ PrefabInstance:
     - {fileID: 3199601579375046940, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
     - {fileID: 321636758554590721, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
     - {fileID: 535417380510649454, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+    - {fileID: 2584219333954347745, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 3572773829833943727, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}

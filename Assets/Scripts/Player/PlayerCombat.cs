@@ -23,6 +23,8 @@ public class PlayerCombat : MonoBehaviour
 
     public CameraShake cameraShake;
 
+    public AudioClip punchSound;
+    public AudioClip groundPoundSound;
 
     void Start()
     {
@@ -52,15 +54,18 @@ public class PlayerCombat : MonoBehaviour
                 Destroy(gpHitbox);
                 gpHitbox = Instantiate(gpHitboxPrefab, this.transform.position, this.transform.rotation);
                 groundPoundAttack = 0.5f;
+                SoundEffects.instance.PlaySFXClip(groundPoundSound, this.transform);
                 isGroundPound = false;
                 groundPound();
                 StartCoroutine(cameraShake.Shaking(.20f, .1f));
+
             }
 
             if (Input.GetKey(KeyCode.Mouse0) && !isPunching && punchAttack == 0)
             {
                 isPunching = true;
                 punchAttack = 0.5f;
+                SoundEffects.instance.PlaySFXClip(punchSound,this.transform);
                 punchHitbox = Instantiate(punchHitboxPrefab, this.transform.position, this.transform.rotation);
             }
 
@@ -104,7 +109,6 @@ public class PlayerCombat : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Enemy") && isGroundPound)
         {
-            Debug.Log("Bouncing");
             Destroy(gpHitbox);
             gpHitbox = Instantiate(gpHitboxPrefab, this.transform.position, this.transform.rotation);
             gpHitbox.transform.localScale = gpHitboxPrefab.transform.localScale * 0.5f;

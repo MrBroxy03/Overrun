@@ -28,15 +28,16 @@ public class Settings : MonoBehaviour
 
         resolutionlist.ClearOptions();
         currentRefreshRate = Screen.currentResolution.refreshRateRatio;
-
+        
         for (int i = 0; i < resolutions.Length; i++) { 
 
             if (resolutions[i].refreshRateRatio.numerator == currentRefreshRate.numerator)
             {
                 selectedresolution.Add(resolutions[i]);
             }
-        
         }
+
+        volumeSlider.value = gamesvolume;
 
         List<string> resoptions = new List<string>();
 
