@@ -278,7 +278,7 @@ MonoBehaviour:
   flashduration: 0.2
   render:
   - {fileID: 0}
-  explosionSound: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+  explosionSound: {fileID: 8300000, guid: 0fc0cbc9b419e1d4696c474b7516842a, type: 3}
 --- !u!114 &2391432727328846270
 MonoBehaviour:
   m_ObjectHideFlags: 0

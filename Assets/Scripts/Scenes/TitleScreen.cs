@@ -19,6 +19,7 @@ public class TitleScreen : MonoBehaviour
     public static bool introplayed=false;
     public float changeScene = 0f;
     private float timepast = 0f;
+
     void Start()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.None;

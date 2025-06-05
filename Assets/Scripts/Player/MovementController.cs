@@ -45,6 +45,8 @@ public class MovementController : MonoBehaviour
 
     public AudioClip jumpSound;
 
+    public AudioClip boostSound;
+
     // Start is called before the first frame update
     private void Start()
     {
@@ -91,8 +93,13 @@ public class MovementController : MonoBehaviour
             jumpCD = Mathf.Clamp(jumpCD - dt, 0, jumpCD);
         }
 
+        if (Input.GetKeyDown(KeyCode.Q) && MaskMeter.meter > 0 && !sliding) 
+        {
+            SoundEffects.instance.PlaySFXClip(boostSound, this.transform);
+        }
         if (Input.GetKey(KeyCode.Q) && MaskMeter.meter > 0 && !sliding)
         {
+
             desiredSpeedZ = boostSpeed;
             acceleration = boostacceleration; 
             isBoosting = true;

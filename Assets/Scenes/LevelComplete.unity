@@ -505,6 +505,20 @@ MonoBehaviour:
   changeScene: 0
   animEffect: {fileID: 1970941208}
   blackScreen: {fileID: 1970941206}
+  winning: {fileID: 8300000, guid: 54e46a2045425c443a64aca14026caf2, type: 3}
+--- !u!114 &186041306
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 186041302}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afa4287fe4e2194fbe4fd01a967dc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxObject: {fileID: 6402587037531312648, guid: 0d57e6071fd63e64a89cb053d352e1ec, type: 3}
 --- !u!4 &201307370 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: df6118bd4412e704f81d9ccf66589b2e, type: 3}
@@ -1046,6 +1060,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0fabb4385bb483c4fad7d23407ce250f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 186041305}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0fabb4385bb483c4fad7d23407ce250f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 186041306}
   m_SourcePrefab: {fileID: 100100000, guid: 0fabb4385bb483c4fad7d23407ce250f, type: 3}
 --- !u!4 &701988577 stripped
 Transform:

@@ -54,7 +54,7 @@ MonoBehaviour:
   attackRange: 10
   animEnemy: {fileID: 2643073461255601355}
   animGun: {fileID: 1534383337978106221}
-  shootingSound: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+  shootingSound: {fileID: 8300000, guid: 5831da952e2c6e74796f549a7f28b01f, type: 3}
 --- !u!114 &1366718027936979666
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,7 +73,7 @@ MonoBehaviour:
   flashduration: 0.2
   render:
   - {fileID: 0}
-  explosionSound: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+  explosionSound: {fileID: 8300000, guid: 0fc0cbc9b419e1d4696c474b7516842a, type: 3}
 --- !u!65 &8237441228237025701
 BoxCollider:
   m_ObjectHideFlags: 0

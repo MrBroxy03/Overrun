@@ -1152,6 +1152,8 @@ GameObject:
   - component: {fileID: 182419948}
   - component: {fileID: 182419947}
   - component: {fileID: 182419945}
+  - component: {fileID: 182419950}
+  - component: {fileID: 182419949}
   m_Layer: 5
   m_Name: MenuUI
   m_TagString: Untagged
@@ -1265,6 +1267,32 @@ MonoBehaviour:
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
   m_PresetInfoIsWorld: 0
+--- !u!114 &182419949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182419943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f9c8415b2a014449c74d1452d31e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMusic: {fileID: 8300000, guid: f11f6eb640415a24d8a9924d39e889c8, type: 3}
+--- !u!114 &182419950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 182419943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0afa4287fe4e2194fbe4fd01a967dc60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sfxObject: {fileID: 6402587037531312648, guid: 0d57e6071fd63e64a89cb053d352e1ec, type: 3}
 --- !u!1 &191526668
 GameObject:
   m_ObjectHideFlags: 0

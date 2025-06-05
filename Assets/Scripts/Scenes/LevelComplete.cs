@@ -11,8 +11,10 @@ public class LevelComplete : MonoBehaviour
     public Animator animEffect;
     public GameObject blackScreen;
 
+    public AudioClip winning;
     void Start()
     {
+        SoundEffects.instance.PlaySFXClip(winning, Camera.main.transform);
         if (animEffect == null)
         {
             animEffect = GetComponent<Animator>();

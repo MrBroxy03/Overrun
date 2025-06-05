@@ -4667,6 +4667,7 @@ GameObject:
   - component: {fileID: 240236153}
   - component: {fileID: 240236154}
   - component: {fileID: 240236155}
+  - component: {fileID: 240236156}
   m_Layer: 0
   m_Name: LevelManager
   m_TagString: Manager
@@ -4730,6 +4731,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sfxObject: {fileID: 6402587037531312648, guid: 0d57e6071fd63e64a89cb053d352e1ec, type: 3}
+--- !u!114 &240236156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 240236150}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4f9c8415b2a014449c74d1452d31e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  levelMusic: {fileID: 8300000, guid: 6847262b637303048aafa4930792ce6a, type: 3}
 --- !u!1001 &242477438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17823,11 +17837,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03eb888a5e375e745ad3a879c1bfd88d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25.715979
+      value: -25.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03eb888a5e375e745ad3a879c1bfd88d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -210.1782
+      value: -206.4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 03eb888a5e375e745ad3a879c1bfd88d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -31575,9 +31589,9 @@ PrefabInstance:
       value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 189410096202996377, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-      propertyPath: jumpSound
+      propertyPath: boostSound
       value: 
-      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+      objectReference: {fileID: 8300000, guid: 235bc8b729de4ad44a9d0e2e6b1b01ff, type: 3}
     - target: {fileID: 189410096202996377, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: boostSpeed
       value: 23
@@ -31694,14 +31708,6 @@ PrefabInstance:
       propertyPath: movementSpeed
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 2981594509702177596, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-      propertyPath: punchSound
-      value: 
-      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
-    - target: {fileID: 2981594509702177596, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-      propertyPath: groundPoundSound
-      value: 
-      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
     - target: {fileID: 3163139500986976361, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: anim
       value: 
@@ -31709,7 +31715,7 @@ PrefabInstance:
     - target: {fileID: 3163139500986976361, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: checkpointSound
       value: 
-      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+      objectReference: {fileID: 8300000, guid: 201d081c86c1638408df16be751af49f, type: 3}
     - target: {fileID: 3163139500986976361, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: checkpoints.Array.size
       value: 2
@@ -31802,10 +31808,6 @@ PrefabInstance:
       propertyPath: hP3
       value: 
       objectReference: {fileID: 998151225}
-    - target: {fileID: 5364766394738882777, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
-      propertyPath: hurtSound
-      value: 
-      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
     - target: {fileID: 5533501250059715839, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: HP1
       value: 
@@ -31849,7 +31851,7 @@ PrefabInstance:
     - target: {fileID: 6523806209416751524, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: railingSound
       value: 
-      objectReference: {fileID: 8300000, guid: f1148e6b1703e0c438ceeb2fd5b56ac0, type: 3}
+      objectReference: {fileID: 8300000, guid: 8c81b4b7bcecf9443b2da2e4f9001c9a, type: 3}
     - target: {fileID: 7005771359466360817, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: near clip plane
       value: 0.1
