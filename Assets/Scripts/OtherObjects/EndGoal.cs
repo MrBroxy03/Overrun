@@ -9,7 +9,6 @@ public class EndGoal : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Debug.Log("Hey can you play Five Nights at Agusto's?");
             SceneManager.LoadScene(2);
         }
     }

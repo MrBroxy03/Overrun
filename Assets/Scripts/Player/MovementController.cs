@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using Unity.VisualScripting;
 using Unity.VisualScripting.Antlr3.Runtime;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class MovementController : MonoBehaviour
@@ -139,7 +138,7 @@ public class MovementController : MonoBehaviour
 
         Debug.DrawRay(this.transform.position, (this.transform.forward * directionZ) + (this.transform.right * directionX) * 0.8f, Color.blue);
         Physics.Raycast(this.transform.position, (this.transform.forward * directionZ) + (this.transform.right * directionX), out RaycastHit check, 0.8f);
-        if (check.collider != null)
+        if (check.collider != null && !check.collider.gameObject.CompareTag("EndGoal"))
         {
             speedZ = 0;
             speedX = 0;
