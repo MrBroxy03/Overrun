@@ -27,4 +27,18 @@ public class SoundEffects : MonoBehaviour
 
         Destroy(source.gameObject,cliplength);
     }
+
+    public AudioSource PlayLoopSFXClip(AudioClip audio, Transform transform)
+    {
+        AudioSource source = Instantiate(sfxObject, transform.position, Quaternion.identity);
+
+        source.loop = true;
+        source.clip = audio;
+        source.volume = Settings.gamesvolume;
+        source.Play();
+
+      
+
+        return source;
+    }
 }

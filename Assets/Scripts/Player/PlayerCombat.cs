@@ -14,7 +14,7 @@ public class PlayerCombat : MonoBehaviour
 
 
     public float groundPoundAttack;
-    public bool isGroundPound = false;
+    public static bool isGroundPound = false;
 
     private GameObject punchHitbox;
     public GameObject punchHitboxPrefab;

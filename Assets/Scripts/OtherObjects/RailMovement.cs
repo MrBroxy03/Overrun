@@ -16,7 +16,9 @@ public class RailMovement : MonoBehaviour
     private float railTimer = 0f;
     private Rigidbody rb;
     bool jumping = MovementController.jumping;
-    
+
+    public AudioClip railingSound;
+    private AudioSource railingsource;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -41,10 +43,12 @@ public class RailMovement : MonoBehaviour
             rb.AddForce((transform.up * 10), ForceMode.Impulse);
             rb.AddForce((transform.forward * 30), ForceMode.Impulse);
 
+            Destroy(railingsource);
+
             splineAnimate.enabled = false;
             playerCombat.enabled = true;
             homingAttack.enabled = true;
-            playerCombat.isGroundPound = false;
+            PlayerCombat.isGroundPound = false;
 
             startMovement = false;
             railTimer = 0;
@@ -78,10 +82,12 @@ public class RailMovement : MonoBehaviour
                 splineAnimate.enabled = true;
                 playerCombat.enabled = false;
                 homingAttack.enabled = false;
-
+                PlayerCombat.isGroundPound = false;
                 splineAnimate.Restart(true);
                 startMovement = true;
-                MaskMeter.meter = Mathf.Clamp(MaskMeter.meter+150,0, MaskMeter.maxMeter) ;
+
+                railingsource = SoundEffects.instance.PlayLoopSFXClip(railingSound, this.transform);
+                MaskMeter.meter = Mathf.Clamp(MaskMeter.meter+150,0, MaskMeter.maxMeter);
             }
         }
     }

@@ -29,7 +29,7 @@ public class HermesAnimations : MonoBehaviour
         bool isOnGround = playerMovement.isOnGround;
         bool ledgeGrab = playerMovement.ledgeGrabbed;
         bool isPunching = playerCombat.isPunching;
-        bool isGP = playerCombat.isGroundPound;
+        bool isGP = PlayerCombat.isGroundPound;
         bool isGrinding = railMovement.startMovement;
 
         AnimatorStateInfo stateInfo = arms.GetCurrentAnimatorStateInfo(0);
