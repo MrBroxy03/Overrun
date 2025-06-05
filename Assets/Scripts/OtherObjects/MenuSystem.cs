@@ -30,6 +30,7 @@ public class MenuSystem : MonoBehaviour
     }
     public void GoBackToTitle()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
     public void PauseFunc()

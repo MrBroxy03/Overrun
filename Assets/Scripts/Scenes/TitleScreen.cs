@@ -15,14 +15,14 @@ public class TitleScreen : MonoBehaviour
     public GameObject blackScreen;
     public GameObject particle;
     public GameObject background;
-    public Canvas Canvas;
+    public Canvas canvas;
     public static bool introplayed=false;
     public float changeScene = 0f;
     private float timepast = 0f;
     void Start()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.None;
-        UnityEngine.Cursor.visible = true; 
+        UnityEngine.Cursor.visible = true;
         Debug.Log("Kaboom, There goes your tower, watch it crumble, feel the power");
         if (!introplayed)
         {
@@ -33,14 +33,16 @@ public class TitleScreen : MonoBehaviour
         {
             background.SetActive(true);
             Destroy(particle);
-            Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             background.SetActive(true);
             Debug.Log("Kaboom");
             intro.enabled = false;
             Destroy(introgmobj);
             Destroy(particle);
+
+
+            animHermes.Play("Idle");
         }
-           
         blackScreen.SetActive(false);
     }
 
@@ -54,7 +56,7 @@ public class TitleScreen : MonoBehaviour
             {
                 background.SetActive(true);
                 Destroy(particle);
-                Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+                canvas.renderMode = RenderMode.ScreenSpaceOverlay;
             }
 
             if (timepast > 5f && introgmobj != null)
@@ -81,9 +83,9 @@ public class TitleScreen : MonoBehaviour
     }
     public void GoToLevel()
     {
-        animHermes.SetTrigger("go2Level");
+        animHermes.Play("Go2Level");
         Debug.Log(animHermes);
-        animEffect.SetTrigger("FadeIn");
+        animEffect.Play("FadeIn");
         blackScreen.SetActive(true);
         changeScene = 0.1f;
     }

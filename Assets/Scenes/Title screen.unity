@@ -1200,7 +1200,7 @@ MonoBehaviour:
   blackScreen: {fileID: 1167818295}
   particle: {fileID: 1761982482}
   background: {fileID: 712421684}
-  Canvas: {fileID: 182419946}
+  canvas: {fileID: 182419946}
   changeScene: 0
 --- !u!223 &182419946
 Canvas:
