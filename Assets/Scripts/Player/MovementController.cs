@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
@@ -92,7 +93,7 @@ public class MovementController : MonoBehaviour
             desiredSpeedZ = boostSpeed;
             acceleration = boostacceleration; 
             isBoosting = true;
-            MaskMeter.meter -= 1;
+            MaskMeter.meter -= 70f*dt;
         }
         else
         {

@@ -16,20 +16,29 @@ public class TitleScreen : MonoBehaviour
     public GameObject particle;
     public GameObject background;
     public Canvas Canvas;
-
+    public static bool introplayed=false;
     public float changeScene = 0f;
     private float timepast = 0f;
     void Start()
     {
-        if (animHermes == null)
+        Debug.Log("Kaboom, There goes your tower, watch it crumble, feel the power");
+        if (!introplayed)
         {
-            animHermes = GetComponent<Animator>();
-            animEffect = GetComponent<Animator>();
+            introgmobj.SetActive(true);
+            intro.Play("Intro");
         }
-
-        introgmobj.SetActive(true);
-        intro.Play("Intro");
-
+        else
+        {
+            background.SetActive(true);
+            Destroy(particle);
+            Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            background.SetActive(true);
+            Debug.Log("Kaboom");
+            intro.enabled = false;
+            Destroy(introgmobj);
+            Destroy(particle);
+        }
+           
         blackScreen.SetActive(false);
     }
 
@@ -37,25 +46,26 @@ public class TitleScreen : MonoBehaviour
     {
         float dt = Time.deltaTime;
 
-        if (timepast > 4f && particle != null)
+        if (introgmobj != null)
         {
-            background.SetActive(true);
-            Destroy(particle);
-            Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
-        }
+            if (timepast > 4f && particle != null)
+            {
+                background.SetActive(true);
+                Destroy(particle);
+                Canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+            }
 
-        if (timepast > 5f && introgmobj != null)
-        {
-            background.SetActive(true);
-            Debug.Log("Kaboom");
-            intro.enabled = false;
-            Destroy(introgmobj);
-            Destroy(particle);
+            if (timepast > 5f && introgmobj != null)
+            {
+                Debug.Log("Kaboom");
+                intro.enabled = false;
+                Destroy(introgmobj);
+                Destroy(particle);
+                introplayed = true;
+            }
 
+            timepast += dt;
         }
-       
-        timepast += dt;
-        
 
         if (changeScene > 0)
         {
@@ -69,8 +79,9 @@ public class TitleScreen : MonoBehaviour
     }
     public void GoToLevel()
     {
-        animHermes.SetBool("go2Level", true);
-        animEffect.SetTrigger("fadeIn");
+        animHermes.SetTrigger("go2Level");
+        Debug.Log(animHermes);
+        animEffect.SetTrigger("FadeIn");
         blackScreen.SetActive(true);
         changeScene = 0.1f;
     }

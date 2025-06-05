@@ -9,8 +9,6 @@ public class PlayerHealth : MonoBehaviour
     public static int health = 3;
     private float hitCountdown = 0f;
 
-    int meter = MaskMeter.meter;
-
     public GameObject hP3;
     public GameObject hP2;
     public GameObject hP1;

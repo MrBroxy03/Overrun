@@ -7,8 +7,8 @@ using static UnityEngine.Rendering.HighDefinition.ProbeSettings.Frustum;
 public class MaskMeter : MonoBehaviour
 {
     public Slider maskMeter;
-    public static int maxMeter = 300;
-    public static int meter;
+    public static float maxMeter = 300f;
+    public static float meter;
     private bool infiniteMode = false;
     private Color ogColor;
     // Start is called before the first frame update

@@ -9,7 +9,7 @@ using static UnityEngine.Rendering.DebugUI;
 
 public class HomingAttack : MonoBehaviour
 {
-    public int meter = MaskMeter.meter;
+    public float meter = MaskMeter.meter;
     public bool jumping = MovementController.jumping;
     public bool homingAttack = false;
     public float homingAttackRange = 50f;

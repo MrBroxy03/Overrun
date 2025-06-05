@@ -16,7 +16,6 @@ public class RailMovement : MonoBehaviour
     private float railTimer = 0f;
     private Rigidbody rb;
     bool jumping = MovementController.jumping;
-    int meter = MaskMeter.meter;
     
     void Start()
     {
