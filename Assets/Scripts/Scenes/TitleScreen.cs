@@ -21,6 +21,8 @@ public class TitleScreen : MonoBehaviour
     private float timepast = 0f;
     void Start()
     {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true; 
         Debug.Log("Kaboom, There goes your tower, watch it crumble, feel the power");
         if (!introplayed)
         {

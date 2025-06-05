@@ -31308,6 +31308,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6459675811084892573, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7005771359466360817, guid: 66f8ec101ce212e4b972b848274c97fc, type: 3}
       propertyPath: near clip plane
       value: 0.1
